@@ -13,9 +13,9 @@ Potete copiare il testo del mio _vimrc_ nel vostro .vimrc
 ### 1.2 Clonare il repository
 
 Eseguite il clone del repository e poi nel vostro .vimrc inserite la seguente riga:
-
+```
   source ~/dot/.vimrc
-  
+```
 presupponendo che abbiate fatto il clone nella vostra cartella Home, altrimenti inserite il percorso specifico di dove si trova il “mio” vimrc. 
 
 ## 2. Creare la cartella di swp per Vim
@@ -24,10 +24,11 @@ Attualmente occorre creare la cartella dove sono contenuti i file s _swap_ di Vi
 
 Da terminale digitare:
 
+```
   mkdir .vim
   cd .vim
   mkdir swp
   cd ~
-  
+
   
 
