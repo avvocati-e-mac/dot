@@ -1,15 +1,16 @@
+" Spazio come Leaderkey
 let mapleader=" "
 
 filetype plugin on
 
 set nocompatible				" vim-specific settings, non-vi-compatible
-set backspace=indent,eol,start 	" Allow backspace in insert mode
-set number						" Line numbers
+set backspace=indent,eol,start 			" Allow backspace in insert mode
+set number					" Line numbers
 set relativenumber				" Conteggio numeri relativi rispetto alla linea in cui si è
 set ruler
 
-set hidden						" Allow hidden buffers
-filetype plugin indent on		" Enable file type detection and do language-dependent indenting.
+set hidden					" Allow hidden buffers
+filetype plugin indent on			" Enable file type detection and do language-dependent indenting.
 set history=1000				" Default = 8
 set autoread					" Ricarica il file modificato in Vim
 
@@ -25,17 +26,17 @@ set directory=$HOME/.vim/swp//	" Richiede prima la creazione della cartella: mkd
 
 nnoremap ; :
 
-set showcmd						" Mostra i comandi incompleti in basso nella finestra
+set showcmd					" Mostra i comandi incompleti in basso nella finestra
 set showmode 					" Mostra il modo in ci si sta lavorando in Vim in basso a sinistra
 
 set tabstop=4					" Default tabs are too big
-set wrap						" Fa scorrere il testo della finestra in base alle parole (wrap)
+set wrap					" Fa scorrere il testo della finestra in base alle parole (wrap)
 set linebreak					" Fa scorrere il testo in modo da non troncare le parole
-set nolist						" list disables linebreak
+set nolist					" list disables linebreak
 set textwidth=0					" Evita a Vim di inserire automaticamente delle interruzioni di linea
 set wrapmargin=0
-set formatoptions-=t			" Don't change wrapping on existing lines
-set formatoptions+=l			" Black magic
+set formatoptions-=t				" Don't change wrapping on existing lines
+set formatoptions+=l				" Black magic
 
 " Spell-check attiva / disattiva con <leader>o, 'o' per 'ortografia':
 	map <leader>o :setlocal spell! spelllang=it,en_us<CR>
@@ -59,9 +60,11 @@ set formatoptions+=l			" Black magic
 	map <leader>v :vsp<Space>~/.vimrc<CR>
 
 " # Color Scheme Solarized [qui scaricato](https://github.com/altercation/vim-colors-solarized)
-"
+" TODO: non mi ci trovo ancora da trovare qualcosa di meglio
+
 syntax enable
 set background=dark
+
 " colorscheme solarized
 
 colorscheme desert
@@ -74,11 +77,11 @@ set statusline+=%h		" Help file flag
 set statusline+=%m		" Se il file è stato modifica
 set statusline+=%r		" Flag file in sola lettura
 set statusline+=%c,		" La colonna su cui è il cursore
-set statusline+=%l/%L	" La linea su cui è il cursore ed il numero di linee totale
-set statusline+=\ %P	" Mostra la propria posizione in percentuale rispetto alla lunghezza complessiva del documento
+set statusline+=%l/%L		" La linea su cui è il cursore ed il numero di linee totale
+set statusline+=\ %P		" Mostra la propria posizione in percentuale rispetto alla lunghezza complessiva del documento
 
-set wildmode=longest,list,full " Attiva auto-completamento
-set wildmenu " Mostra le opzioni di completamento della command line
+set wildmode=longest,list,full 		" Attiva auto-completamento
+set wildmenu 				" Mostra le opzioni di completamento della command line
 
 if has('gui_running')
     set background=light
@@ -86,7 +89,7 @@ else
     set background=dark
 endif
 
-" Documentazione in italiano ed inglese
+" Documentazione in italiano ed inglese (c'è da scaricare però la documentazione tradotta in italiano da http://www.pluto.it/files/ildp/traduzioni/vimhelp-it/index.html)
 :set helplang=it,en
 
 " Pathogen
@@ -95,12 +98,13 @@ endif
 " syntax on
 " filetype plugin indent on
 
-"semplicemente tenendo premuto CTRL e spostando la riga con le frecce
+" Soposta le righe su e giù semplicemente tenendo premuto CTRL e spostando la riga con le frecce
 " in alto e in basso.
+
 nmap <C-Up> ddkP
 nmap <C-Down> ddp
 
-" i caratteri nascosti, come ad esempio gli spazi a fine riga,
+" Rende visibile i caratteri nascosti, come ad esempio gli spazi a fine riga,
 " e i caratteri di tabulazione
 nmap <leader>l :set list!<CR>
 
@@ -108,9 +112,9 @@ nmap <leader>l :set list!<CR>
 
 " Navigare con le guide (utile per spostarsi velocemente con dei segnaposti)
 
- 	inoremap <leader><leader> <Esc>/<++><Enter>"_c4l
-	vnoremap <leader><leader> <Esc>/<++><Enter>"_c4l
-	map <leader><leader> <Esc>/<++><Enter>"_c4l
+inoremap <leader><leader> <Esc>/<++><Enter>"_c4l
+vnoremap <leader><leader> <Esc>/<++><Enter>"_c4l
+map <leader><leader> <Esc>/<++><Enter>"_c4l
 
 " Scorciatoie utili in LaTeX
 
@@ -127,6 +131,7 @@ nmap <leader>l :set list!<CR>
 	autocmd FileType tex inoremap xsc \textsc{}<Space><++><Esc>T{i
 
 "MARKDOWN
+
 	autocmd Filetype markdown,rmd map <leader>w yiWi[<esc>Ea](<esc>pa)
 	autocmd Filetype markdown,rmd inoremap xn ---<Enter><Enter>
 	autocmd Filetype markdown,rmd inoremap xb ****<++><Esc>F*hi
@@ -141,7 +146,7 @@ nmap <leader>l :set list!<CR>
 	autocmd Filetype markdown,rmd inoremap xl --------<Enter>
 
 " Dialetto LaTeX
-"
+
 " Testo centrato
 autocmd Filetype markdown,rmd map <leader>k 0O\\begin{center}<esc>jjO\\end{center}
 
@@ -163,7 +168,7 @@ vnoremap <leader>l c[<Esc>pi](<++>)
 " Link dalla clipboard di macOS in modalità visuale
 vnoremap <leader>p c[<Esc>pi](<Esc>"+pa)<Esc>
 
-"Generale
+" Generale: converte accento e lettara in lettera accentata ed euro in €
 
 inoremap `e è
 inoremap 'e é
