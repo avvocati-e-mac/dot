@@ -1,3 +1,6 @@
+" Test per vedere se risconosce correttamente i file .md
+autocmd BufNewFile,BufFilePre,BufRead *.md set filetype=markdown.pandoc
+
 " Spazio come Leaderkey
 let mapleader=" "
 
@@ -64,6 +67,10 @@ set formatoptions+=l				" Black magic
 " Apri .vimrc (idea presa da Luke Smith)
 
 	map <leader>v :vsp<Space>~/dot/.vimrc<CR>
+
+" Ricarica il .vimrc
+
+	map <leader>s :source<Space>~/dot/.vimrc<CR>
 
 " # Color Scheme Solarized [qui scaricato](https://github.com/altercation/vim-colors-solarized)
 " TODO: non mi ci trovo ancora da trovare qualcosa di meglio
@@ -213,7 +220,11 @@ autocmd!
 autocmd BufWinLeave * mkview
 autocmd BufWinEnter * silent loadview
 
+
 " FUNZIONE PER RIPIEGARE I CAPITOLI NEI FILE IN MARKDOWN (fold)
+
+setlocal foldmethod=expr
+setlocal foldexpr=MarkdownFolds()
 
 function! MarkdownFolds()
 	let thisline = getline(v:lnum)
@@ -227,8 +238,8 @@ elseif match(thisline, '^#') >= 0
 		return "="
 	endif
 endfunction
-setlocal foldmethod=expr
-setlocal foldexpr=MarkdownFolds()
+
+setlocal foldtext=MarkdownFoldText()
 
 function! MarkdownFoldText()
     "get first non-blank line
@@ -265,5 +276,4 @@ function! MarkdownFoldText()
     " return line . "......" . foldSizeStr . foldPercentage . foldLevelStr
 endfunction
 
-setlocal foldtext=MarkdownFoldText()
 
