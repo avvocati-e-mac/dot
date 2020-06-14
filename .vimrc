@@ -189,7 +189,14 @@ inoremap euro €
 " Inserimento documenti per PCT in Virtual block mode / Visuale Blocco
 vnoremap <leader>w I[doc00]: <esc>
 
-" FUNZIONE PER RIPIEGARE I CAPITOLI NEI FILE IN MARKDOWN
+" Salvataggio delle ripiegature dei capitoli (fold)
+
+augroup auto_save_folds
+autocmd!
+autocmd BufWinLeave * mkview
+autocmd BufWinEnter * silent loadview
+
+" FUNZIONE PER RIPIEGARE I CAPITOLI NEI FILE IN MARKDOWN (fold)
 
 function! MarkdownFolds()
 	let thisline = getline(v:lnum)
