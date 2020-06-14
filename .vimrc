@@ -188,3 +188,58 @@ inoremap euro €
 
 " Inserimento documenti per PCT in Virtual block mode / Visuale Blocco
 vnoremap <leader>w I[doc00]: <esc>
+
+" FUNZIONE PER RIPIEGARE I CAPITOLI NEI FILE IN MARKDOWN
+
+function! MarkdownFolds()
+	let thisline = getline(v:lnum)
+	if match(thisline, '^###') >= 0
+		return ">3"
+elseif match(thisline, '^##') >= 0
+		return ">2"
+elseif match(thisline, '^#') >= 0
+		return ">1"
+	else
+		return "="
+	endif
+endfunction
+setlocal foldmethod=expr
+setlocal foldexpr=MarkdownFolds()
+
+function! MarkdownFoldText()
+    "get first non-blank line
+    let fs = v:foldstart
+    while getline(fs) =~ '^\s*$' | let fs = nextnonblank(fs + 1)
+    endwhile
+    if fs > v:foldend
+        let line = getline(v:foldstart)
+    else
+        let line = substitute(getline(fs), '\t', repeat(' ', &tabstop), 'g')
+    endif
+
+    let w = winwidth(0) - &foldcolumn - (&number ? 8 : 0)
+    let foldSize = 1 + v:foldend - v:foldstart
+
+    let i = v:foldstart
+    let foldWords=0
+    while (i<v:foldend)
+      let lineWords = len(split(getline(i)))
+      let foldWords = foldWords + lineWords
+      let i += 1
+    endwhile
+    let wordCount = wordcount()["words"]
+
+    " let foldWords = v:foldend,v:foldstart!wc -w
+    let foldWordsStr = " " . foldWords . " parole, "
+    let foldSizeStr = foldWordsStr . foldSize . " l "
+    let foldLevelStr = repeat("+--", v:foldlevel)
+    let foldPercentage = printf("[%.1f", (foldWords*1.0)/wordCount*100) . "%] "
+    " let expansionString = "."
+    let expansionString = repeat(".", w - strwidth(foldSizeStr.line.foldLevelStr.foldPercentage))
+    return line . expansionString . foldSizeStr . foldPercentage . foldLevelStr
+    " return line . expansionString . foldSizeStr . foldPercentage . foldWordsStr . foldLevelStr
+    " return line . "......" . foldSizeStr . foldPercentage . foldLevelStr
+endfunction
+
+setlocal foldtext=MarkdownFoldText()
+
