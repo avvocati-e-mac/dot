@@ -24,6 +24,11 @@ set sidescrolloff=5				" Il numero di colonne dello schermo da tenere a destro a
 
 set directory=$HOME/.vim/swp//	" Richiede prima la creazione della cartella: mkdir ~/.vim/swp
 
+" Undo persistenti tra più sessioni di Vim
+
+set undofile
+set undodir=~/.vim/udodir
+
 nnoremap ; :
 
 set showcmd					" Mostra i comandi incompleti in basso nella finestra
@@ -37,6 +42,7 @@ set textwidth=0					" Evita a Vim di inserire automaticamente delle interruzioni
 set wrapmargin=0
 set formatoptions-=t				" Don't change wrapping on existing lines
 set formatoptions+=l				" Black magic
+
 
 " Spell-check attiva / disattiva con <leader>o, 'o' per 'ortografia':
 	map <leader>o :setlocal spell! spelllang=it,en_us<CR>
@@ -55,9 +61,9 @@ set formatoptions+=l				" Black magic
 	map <C-l> <C-w>l
 
 
-" Apri .vimrc (idea presa da Luke Smith))
+" Apri .vimrc (idea presa da Luke Smith)
 
-	map <leader>v :vsp<Space>~/.vimrc<CR>
+	map <leader>v :vsp<Space>~/dot/.vimrc<CR>
 
 " # Color Scheme Solarized [qui scaricato](https://github.com/altercation/vim-colors-solarized)
 " TODO: non mi ci trovo ancora da trovare qualcosa di meglio
@@ -189,7 +195,18 @@ inoremap euro €
 " Inserimento documenti per PCT in Virtual block mode / Visuale Blocco
 vnoremap <leader>w I[doc00]: <esc>
 
-" Salvataggio delle ripiegature dei capitoli (fold)
+" Settaggi base delle ripiegature (fold)
+
+set foldmethod=syntax
+set foldlevelstart=1
+
+let vimsyn_folding='af' " Vim script (tra cui il .vimrc)
+
+" Visualizzazione grafica del livello di ripiegatura (fold)
+
+set foldcolumn=3
+
+" Salvataggio delle ripiegature (fold)
 
 augroup auto_save_folds
 autocmd!
@@ -236,7 +253,7 @@ function! MarkdownFoldText()
     endwhile
     let wordCount = wordcount()["words"]
 
-    " let foldWords = v:foldend,v:foldstart!wc -w
+    let foldWords = v:foldend,v:foldstart!wc -w
     let foldWordsStr = " " . foldWords . " parole, "
     let foldSizeStr = foldWordsStr . foldSize . " l "
     let foldLevelStr = repeat("+--", v:foldlevel)
