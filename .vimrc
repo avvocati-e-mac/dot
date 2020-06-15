@@ -121,6 +121,10 @@ nmap <C-Down> ddp
 " e i caratteri di tabulazione
 nmap <leader>l :set list!<CR>
 
+" Aprire il file che si sta modificando in Marked 2
+
+:nnoremap <leader>m :silent !open -a Marked\ 2.app '%:p'<cr>
+
 " AUTOMAZIONI UTILI
 
 " Navigare con le guide (utile per spostarsi velocemente con dei segnaposti)
