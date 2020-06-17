@@ -127,10 +127,10 @@ nmap <leader>l :set list!<CR>
 
 " Aprire file md convertito in PDF
 
-	map <leader>p :!~/opout <c-r>%<CR><CR>
+	map <leader>p :!~/dot/opout.sh <c-r>%<CR><CR>
 
 " Compile document, be it groff/LaTeX/markdown/etc.
-	map <leader>c :w! \| !~/compiler <c-r>%<CR>	
+	map <leader>c :w! \| !~/dot/compiler.sh <c-r>%<CR>	
 
 " AUTOMAZIONI UTILI
 
