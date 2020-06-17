@@ -1,5 +1,5 @@
 " Test per vedere se risconosce correttamente i file .md
-autocmd BufNewFile,BufFilePre,BufRead *.md set filetype=markdown.pandoc
+" autocmd BufNewFile,BufFilePre,BufRead *.md set filetype=markdown.pandoc
 
 " Spazio come Leaderkey
 let mapleader=" "
@@ -54,8 +54,8 @@ set formatoptions+=l				" Black magic
 	set splitbelow splitright
 
 " Nerd tree (Luke Smith)
-	map <leader>n :NERDTreeToggle<CR>
-	autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+" 	map <leader>n :NERDTreeToggle<CR>
+"	autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " Velocizza la navigazione nelle finestre di Vim (Luke Smith):
 	map <C-h> <C-w>h
