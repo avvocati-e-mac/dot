@@ -125,6 +125,13 @@ nmap <leader>l :set list!<CR>
 
 :nnoremap <leader>m :silent !open -a Marked\ 2.app '%:p'<cr>
 
+" Aprire file md convertito in PDF
+
+	map <leader>p :!~/opout <c-r>%<CR><CR>
+
+" Compile document, be it groff/LaTeX/markdown/etc.
+	map <leader>c :w! \| !~/compiler <c-r>%<CR>	
+
 " AUTOMAZIONI UTILI
 
 " Navigare con le guide (utile per spostarsi velocemente con dei segnaposti)
