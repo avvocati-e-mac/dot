@@ -8,8 +8,8 @@
 system=$(uname)
 
 if $system="Linux"
-		echo "sei su linux"
-  else
+input=$(readlink -f "$1") # Script originale Luke Smith con mia variabile aggiuntiva
+	else
 input=$(greadlink -f "$1") # https://stackoverflow.com/questions/1055671/how-can-i-get-the-behavior-of-gnus-readlink-f-on-a-mac
 fi
 
