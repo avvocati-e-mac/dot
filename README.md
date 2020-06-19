@@ -29,6 +29,29 @@ Da terminale digitare:
   cd .vim
   mkdir swp
   cd ~
+```
 
-  
+## Scorciatoie a tastiera personalizzate
+
+## Come installare i plugin
+
+In Vim Unix (Linux e macOS) digitare a terminale il seguente comando
+
+```
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+```
+
+[Fonte](https://github.com/junegunn/vim-plug#installation)  
+
+A questo punto, in Vim, digirare:
+```
+: PlugInstall
+```
+Si aprirà una finesta che mostrerà lo stato di installazione del plugin
+
+## Goyo
+
+## Vim-airline gestore della statusline
+
 

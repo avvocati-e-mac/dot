@@ -6,6 +6,24 @@ let mapleader=" "
 
 filetype plugin on
 
+" Vim-plug - gestore plugin fonte: https://github.com/junegunn/vim-plug
+" : PlugInstall per installare un plugin aggiunto
+" : PlugUpdate per aggiornare i plugin installati
+" : PlugUpgrade per aggiornare vim-plug stesso
+" : PlugClean per rimuovere i plugin cancellati dalla lista qui sotto
+
+call plug#begin('~/.vim/plugged')
+
+" Statusline bella
+Plug 'https://github.com/vim-airline/vim-airline'
+
+" Vim Goyo - ambiente di scrittura senza distrazioni
+
+Plug  'https://github.com/junegunn/goyo.vim'
+
+" Chiusura di Vim-plug
+call plug#end()
+
 set nocompatible				" vim-specific settings, non-vi-compatible
 set backspace=indent,eol,start 			" Allow backspace in insert mode
 set number					" Line numbers
@@ -136,7 +154,7 @@ nmap <leader>l :set list!<CR>
 
 " Navigare con le guide (utile per spostarsi velocemente con dei segnaposti)
 
-inoremap <leader><leader> <Esc>/<++><Enter>"_c4l
+inoremap <leader><leader> <Esc>/<Enter>"_c4l
 vnoremap <leader><leader> <Esc>/<++><Enter>"_c4l
 map <leader><leader> <Esc>/<++><Enter>"_c4l
 
