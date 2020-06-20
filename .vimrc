@@ -25,7 +25,7 @@ Plug  'https://github.com/junegunn/goyo.vim'
 call plug#end()
 
 " Salvare il documento ogni volta che si preme Esc quando si esce da Insert Mode
-inoremap <Esc> <Esc>:w<CR>
+" inoremap <Esc> <Esc>:w<CR>
 
 set nocompatible				" vim-specific settings, non-vi-compatible
 set backspace=indent,eol,start 			" Allow backspace in insert mode
@@ -97,22 +97,22 @@ set formatoptions+=l				" Black magic
 " TODO: non mi ci trovo ancora da trovare qualcosa di meglio
 
 syntax enable
-set background=dark
+" set background=dark
 
 " colorscheme solarized
 
-colorscheme desert
+" colorscheme desert
 
-set laststatus=2 		" Mostra sempre la status line
+" set laststatus=2 		" Mostra sempre la status line
 
-set statusline+=%t		" il percorso del file
-set statusline+=%{&ff} " Tipo di file
-set statusline+=%h		" Help file flag
-set statusline+=%m		" Se il file è stato modifica
-set statusline+=%r		" Flag file in sola lettura
-set statusline+=%c,		" La colonna su cui è il cursore
-set statusline+=%l/%L		" La linea su cui è il cursore ed il numero di linee totale
-set statusline+=\ %P		" Mostra la propria posizione in percentuale rispetto alla lunghezza complessiva del documento
+"set statusline+=%t		" il percorso del file
+" set statusline+=%{&ff} " Tipo di file
+" set statusline+=%h		" Help file flag
+" set statusline+=%m		" Se il file è stato modifica
+" set statusline+=%r		" Flag file in sola lettura
+"set statusline+=%c,		" La colonna su cui è il cursore
+" set statusline+=%l/%L		" La linea su cui è il cursore ed il numero di linee totale
+" set statusline+=\ %P		" Mostra la propria posizione in percentuale rispetto alla lunghezza complessiva del documento
 
 set wildmode=longest,list,full 		" Attiva auto-completamento
 set wildmenu 				" Mostra le opzioni di completamento della command line
