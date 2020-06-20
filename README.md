@@ -54,4 +54,8 @@ Si aprirà una finesta che mostrerà lo stato di installazione del plugin
 
 ## Vim-airline gestore della statusline
 
+## Cose da tenere presente
 
+Ho inserito un sistema di ”auto salvataggio”. Ogni volta che, dopo aver fatto una modifica in _insert mode_,  si preme Esc il file viene salvato.
+
+Per ora è un test, teoricamente con i file di Swap di Vim non c'è il problema ma evita di dover digitare sempre ```:w``` ogni volta che si vuole salvare.
