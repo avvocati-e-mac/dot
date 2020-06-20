@@ -24,6 +24,9 @@ Plug  'https://github.com/junegunn/goyo.vim'
 " Chiusura di Vim-plug
 call plug#end()
 
+" Salvare il documento ogni volta che si preme Esc quando si esce da Insert Mode
+inoremap <Esc> <Esc>:w<CR>
+
 set nocompatible				" vim-specific settings, non-vi-compatible
 set backspace=indent,eol,start 			" Allow backspace in insert mode
 set number					" Line numbers
