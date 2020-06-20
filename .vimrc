@@ -114,34 +114,26 @@ set statusline+=\ %P		" Mostra la propria posizione in percentuale rispetto alla
 set wildmode=longest,list,full 		" Attiva auto-completamento
 set wildmenu 				" Mostra le opzioni di completamento della command line
 
-if has('gui_running')
-    set background=light
-else
-    set background=dark
-endif
+" if has('gui_running')
+  "  set background=light
+"else
+ "   set background=dark
+" endif
 
 " Documentazione in italiano ed inglese (c'è da scaricare però la documentazione tradotta in italiano da http://www.pluto.it/files/ildp/traduzioni/vimhelp-it/index.html)
 :set helplang=it,en
 
-" Pathogen
-
-" execute pathogen#infect()
-" syntax on
-" filetype plugin indent on
-
-" Soposta le righe su e giù semplicemente tenendo premuto CTRL e spostando la riga con le frecce
-" in alto e in basso.
+" Sposta le righe su e giù semplicemente tenendo premuto CTRL e spostando la riga con le frecce in alto e in basso.
 
 nmap <C-Up> ddkP
 nmap <C-Down> ddp
 
-" Rende visibile i caratteri nascosti, come ad esempio gli spazi a fine riga,
-" e i caratteri di tabulazione
+" Rende visibile i caratteri nascosti, come ad esempio gli spazi a fine riga, e i caratteri di tabulazione
 nmap <leader>l :set list!<CR>
 
 " Aprire il file che si sta modificando in Marked 2
-
 :nnoremap <leader>m :silent !open -a Marked\ 2.app '%:p'<cr>
+
 
 " Aprire file md convertito in PDF
 

@@ -20,8 +20,6 @@ dir=${file%/*}
 base="${file%.*}"
 ext="${file##*.}"
 
-cd "$dir" || exit
+cd "$dir" # || exit
 	
-case "$ext" in
-	md)	pandoc "$file" --pdf-engine=xelatex -o "$base".pdf
-esac
+pandoc "$file" --pdf-engine=xelatex -o "$base".pdf
