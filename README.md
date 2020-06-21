@@ -62,15 +62,15 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 
 [Fonte](https://github.com/junegunn/vim-plug#installation)  
 
-A questo punto, in Vim, digirare:
+A questo punto, in Vim, digitare:
 ```
 : PlugInstall
 ```
-Si aprirà una finesta che mostrerà lo stato di installazione del plugin
+Si aprirà una finestra che mostrerà lo stato di installazione del plugin
 
 ## Scorciatoie a tastiera personalizzate
 
-Per visualizzare in Vim le scociatoie personalizzate che ho creato digitare:
+Per visualizzare in Vim le scorciatoie personalizzate che ho creato digitare:
 
 ```
 :map <leader>
