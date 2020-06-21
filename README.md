@@ -1,5 +1,14 @@
 In questo repository ho caricato i miei “dot file” per uso personale … ma se a qualcuno possono interessare ovviamente sono a disposizione!
 
+1. [1. Come installare il mio .vimrc](#1-come-installare-il-mio-vimrc)
+	1. [1.1 Istruzioni per me o per chi fa un fork del mio dot repository](#11-istruzioni-per-me-o-per-chi-fa-un-fork-del-mio-dot-repository)
+2. [2. Creare la cartella di swp e undodir per Vim](#2-creare-la-cartella-di-swp-e-undodir-per-vim)
+3. [Scorciatoie a tastiera personalizzate](#scorciatoie-a-tastiera-personalizzate)
+4. [Come installare i plugin](#come-installare-i-plugin)
+5. [Goyo](#goyo)
+6. [Vim-airline gestore della statusline](#vim-airline-gestore-della-statusline)
+7. [Cose da tenere presente](#cose-da-tenere-presente)
+
 ## 1. Come installare il mio .vimrc
 
 Aprire il terminale e digitare il seguente comando:
