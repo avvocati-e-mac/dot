@@ -1,16 +1,11 @@
-# dot
-
 In questo repository ho caricato i miei “dot file” per uso personale … ma se a qualcuno possono interessare ovviamente sono a disposizione!
-
-# Istruzioni di base
 
 ## 1. Come installare il mio .vimrc
 
 Aprire il terminale e digitare il seguente comando:
 
 ```
-	curl -L 'https://raw.githubusercontent.com/Eriugen/dot/master/.vimrc' > .vimrc
-
+curl -L 'https://raw.githubusercontent.com/Eriugen/dot/master/.vimrc' > .vimrc
 ```
 
 ### 1.1 Istruzioni per me o per chi fa un fork del mio dot repository
@@ -19,20 +14,16 @@ Andare nella home con il seguente comando:
 
 ```
 cd ~
-
 ```
 Poi clonare il repository con il comando 
 
 ```
 git clone git@github.com:Eriugen/dot.git .
-
 ```
 Creare nella home un link simbolico al file .vimrc contenuto all'interno della cartella /dot con il seguente comando:
 
 ```
-
 ln -sfn ~/dot/.vimrc .vimrc
-
 ```
 
 ## 2. Creare la cartella di swp e undodir per Vim
@@ -43,9 +34,9 @@ e i salvataggi per gli undo tra differenti sessioni.
 Da terminale digitare:
 
 ```
-	cd ~	
-	mkdir .vim/swp
-	mkdir .vim/undodir
+cd ~	
+mkdir .vim/swp
+mkdir .vim/undodir
 ```
 
 ## Scorciatoie a tastiera personalizzate
