@@ -26,6 +26,13 @@ Plug  'https://github.com/junegunn/goyo.vim'
  Plug  'https://github.com/vim-pandoc/vim-pandoc'
  Plug  'https://github.com/vim-pandoc/vim-pandoc-syntax'
 
+" Creazione indice per file MD (uso per GitHub)
+" Per creare il TOC digitare :GenerateMarkdownTOC
+" e verrà creato nella posizione in cui il cursore 
+" si trova
+
+Plug 'https://github.com/ajorgensen/vim-markdown-toc'
+
 " Chiusura di Vim-plug
 call plug#end()
 
