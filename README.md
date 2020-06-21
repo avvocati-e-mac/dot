@@ -6,29 +6,46 @@ In questo repository ho caricato i miei “dot file” per uso personale … ma
 
 ## 1. Come installare il mio .vimrc
 
-### 1.1 Copiare il contenuto del file di testo nel vostro .vimrc
+Aprire il terminale e digitare il seguente comando:
 
-Potete copiare il testo del mio _vimrc_ nel vostro .vimrc
-
-### 1.2 Clonare il repository
-
-Eseguite il clone del repository e poi nel vostro .vimrc inserite la seguente riga:
 ```
-  source ~/dot/.vimrc
+	curl -L 'https://raw.githubusercontent.com/Eriugen/dot/master/.vimrc' > .vimrc
+
 ```
-presupponendo che abbiate fatto il clone nella vostra cartella Home, altrimenti inserite il percorso specifico di dove si trova il “mio” vimrc. 
 
-## 2. Creare la cartella di swp per Vim
+### 1.1 Istruzioni per me o per chi fa un fork del mio dot repository
 
-Attualmente occorre creare la cartella dove sono contenuti i file s _swap_ di Vim (dove vengono salvate le versioni del file che si sta modificando mentre si eseguono le modifiche e prima di aver salvato)
+Andare nella home con il seguente comando:
+
+```
+cd ~
+
+```
+Poi clonare il repository con il comando 
+
+```
+git clone git@github.com:Eriugen/dot.git .
+
+```
+Creare nella home un link simbolico al file .vimrc contenuto all'interno della cartella /dot con il seguente comando:
+
+```
+
+ln -sfn ~/dot/.vimrc .vimrc
+
+```
+
+## 2. Creare la cartella di swp e undodir per Vim
+
+Attualmente occorre creare la cartella dove sono contenuti i file di _swap_ di Vim (dove vengono salvate le versioni del file che si sta modificando mentre si eseguono le modifiche e prima di aver salvato)
+e i salvataggi per gli undo tra differenti sessioni.
 
 Da terminale digitare:
 
 ```
-  mkdir .vim
-  cd .vim
-  mkdir swp
-  cd ~
+	cd ~	
+	mkdir .vim/swp
+	mkdir .vim/undodir
 ```
 
 ## Scorciatoie a tastiera personalizzate

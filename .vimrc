@@ -56,7 +56,7 @@ set directory=$HOME/.vim/swp//	" Richiede prima la creazione della cartella: mkd
 " Undo persistenti tra più sessioni di Vim
 
 set undofile
-set undodir=~/.vim/udodir
+set undodir=~/.vim/undodir
 
 nnoremap ; :
 
