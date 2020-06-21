@@ -21,6 +21,11 @@ Plug 'https://github.com/vim-airline/vim-airline'
 
 Plug  'https://github.com/junegunn/goyo.vim'
 
+" Vim-pandoc e  Vim-pandoc-syntax (DA TESTARE)
+
+ Plug  'https://github.com/vim-pandoc/vim-pandoc'
+ Plug  'https://github.com/vim-pandoc/vim-pandoc-syntax'
+
 " Chiusura di Vim-plug
 call plug#end()
 
@@ -84,7 +89,6 @@ set formatoptions+=l				" Black magic
 	map <C-k> <C-w>k
 	map <C-l> <C-w>l
 
-
 " Apri .vimrc (idea presa da Luke Smith)
 
 	map <leader>v :vsp<Space>~/dot/.vimrc<CR>
@@ -128,8 +132,8 @@ set wildmenu 				" Mostra le opzioni di completamento della command line
 
 " Sposta le righe su e giù semplicemente tenendo premuto CTRL e spostando la riga con le frecce in alto e in basso.
 
-nmap <C-Up> ddkP
-nmap <C-Down> ddp
+map <C-Up> ddkP
+map <C-Down> ddp
 
 " Rende visibile i caratteri nascosti, come ad esempio gli spazi a fine riga, e i caratteri di tabulazione
 nmap <leader>l :set list!<CR>
@@ -140,10 +144,10 @@ nmap <leader>l :set list!<CR>
 
 " Aprire file md convertito in PDF
 
-	map <leader>p :!~/dot/opout.sh <c-r>%<CR><CR>
+	map <leader>p :!open "%:r".pdf<CR>
 
-" Compile document, be it groff/LaTeX/markdown/etc.
-	map <leader>c :w! \| !~/dot/compiler.sh <c-r>%<CR>	
+" Compila il file MD aperto in PDF con opzione base
+	map <leader>c :w! \| !pandoc "%" --pdf-engine=xelatex -o "%:r".pdf<CR>
 
 " AUTOMAZIONI UTILI
 
