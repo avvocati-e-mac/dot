@@ -91,11 +91,11 @@ set formatoptions+=l				" Black magic
 
 " Apri .vimrc (idea presa da Luke Smith)
 
-	map <leader>v :vsp<Space>~/dot/.vimrc<CR>
+	map <leader>v :vsp<Space>~/.vimrc<CR>
 
 " Ricarica il .vimrc
 
-	map <leader>s :source<Space>~/dot/.vimrc<CR>
+	map <leader>s :source<Space>~/.vimrc<CR>
 
 " # Color Scheme Solarized [qui scaricato](https://github.com/altercation/vim-colors-solarized)
 " TODO: non mi ci trovo ancora da trovare qualcosa di meglio
