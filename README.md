@@ -1,15 +1,18 @@
 In questo repository ho caricato i miei “dot file” per uso personale … ma se a qualcuno possono interessare ovviamente sono a disposizione!
 
-1. [1. Come installare il mio .vimrc](#1-come-installare-il-mio-vimrc)
-	1. [1.1 Istruzioni per me o per chi fa un fork del mio dot repository](#11-istruzioni-per-me-o-per-chi-fa-un-fork-del-mio-dot-repository)
-2. [2. Creare la cartella di swp e undodir per Vim](#2-creare-la-cartella-di-swp-e-undodir-per-vim)
-3. [Scorciatoie a tastiera personalizzate](#scorciatoie-a-tastiera-personalizzate)
-4. [Come installare i plugin](#come-installare-i-plugin)
-5. [Goyo](#goyo)
-6. [Vim-airline gestore della statusline](#vim-airline-gestore-della-statusline)
-7. [Cose da tenere presente](#cose-da-tenere-presente)
 
-## 1. Come installare il mio .vimrc
+1. [Come installare il mio .vimrc](#come-installare-il-mio-vimrc)
+	1. [Istruzioni per me o per chi fa un fork del mio dot repository](#istruzioni-per-me-o-per-chi-fa-un-fork-del-mio-dot-repository)
+	2. [Creare la cartella di swp e undodir per Vim](#creare-la-cartella-di-swp-e-undodir-per-vim)
+	3. [Come installare i plugin](#come-installare-i-plugin)
+2. [Scorciatoie a tastiera personalizzate](#scorciatoie-a-tastiera-personalizzate)
+3. [Plugin installati](#plugin-installati)
+	1. [Goyo](#goyo)
+	2. [Vim-airline gestore della statusline](#vim-airline-gestore-della-statusline)
+	3. [Vim-pandoc e  Vim-pandoc-syntax (DA TESTARE)](#vim-pandoc-e--vim-pandoc-syntax-da-testare)
+	4. [Vim-markdown-toc](#vim-markdown-toc)
+
+## Come installare il mio .vimrc
 
 Aprire il terminale e digitare il seguente comando:
 
@@ -17,7 +20,7 @@ Aprire il terminale e digitare il seguente comando:
 curl -L 'https://raw.githubusercontent.com/Eriugen/dot/master/.vimrc' > .vimrc
 ```
 
-### 1.1 Istruzioni per me o per chi fa un fork del mio dot repository
+### Istruzioni per me o per chi fa un fork del mio dot repository
 
 Andare nella home con il seguente comando:
 
@@ -35,7 +38,7 @@ Creare nella home un link simbolico al file .vimrc contenuto all'interno della c
 ln -sfn ~/dot/.vimrc .vimrc
 ```
 
-## 2. Creare la cartella di swp e undodir per Vim
+### Creare la cartella di swp e undodir per Vim
 
 Attualmente occorre creare la cartella dove sono contenuti i file di _swap_ di Vim (dove vengono salvate le versioni del file che si sta modificando mentre si eseguono le modifiche e prima di aver salvato)
 e i salvataggi per gli undo tra differenti sessioni.
@@ -48,9 +51,7 @@ mkdir .vim/swp
 mkdir .vim/undodir
 ```
 
-## Scorciatoie a tastiera personalizzate
-
-## Come installare i plugin
+### Come installare i plugin
 
 In Vim Unix (Linux e macOS) digitare a terminale il seguente comando
 
@@ -67,12 +68,18 @@ A questo punto, in Vim, digirare:
 ```
 Si aprirà una finesta che mostrerà lo stato di installazione del plugin
 
-## Goyo
+## Scorciatoie a tastiera personalizzate
 
-## Vim-airline gestore della statusline
+Per visualizzare in Vim le scociatoie personalizzate che ho creato digitare:
 
-## Cose da tenere presente
+```
+:map <leader>
+```
 
-Ho inserito un sistema di ”auto salvataggio”. Ogni volta che, dopo aver fatto una modifica in _insert mode_,  si preme Esc il file viene salvato.
+## Plugin installati
 
-Per ora è un test, teoricamente con i file di Swap di Vim non c'è il problema ma evita di dover digitare sempre ```:w``` ogni volta che si vuole salvare.
+### Goyo
+
+### Vim-airline gestore della statusline
+### Vim-pandoc e  Vim-pandoc-syntax (DA TESTARE)
+### Vim-markdown-toc
