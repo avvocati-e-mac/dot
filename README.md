@@ -40,7 +40,7 @@ Creare nella home un link simbolico al file .vimrc contenuto all'interno della c
 ln -sfn ~/dot/.vimrc .vimrc
 ```
 
-Fatto cio c'è da entrare nella cartella dot ed impostare le credenziali locali come utente git.
+Fatto ciò c'è da entrare nella cartella dot ed impostare le credenziali locali come utente git.
 
 ```
 cd dot
@@ -97,3 +97,11 @@ Per visualizzare in Vim le scorciatoie personalizzate che ho creato digitare:
 ### Vim-airline gestore della statusline
 ### Vim-pandoc e  Vim-pandoc-syntax (DA TESTARE)
 ### Vim-markdown-toc
+
+Comandi di base per generare, modificare e cancellare l'indice (TOC: table of contents
+
+```
+:GenerateMarkdownTOC # Genera un nuovo indice
+```
+
+[Fonte](https://github.com/ajorgensen/vim-markdown-toc)
