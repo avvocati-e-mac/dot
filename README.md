@@ -90,7 +90,7 @@ Per visualizzare in Vim le scorciatoie personalizzate che ho creato digitare:
 :map <leader>
 ```
 
-## Plugin installati
+## Plugin installati in Vim
 
 ### Goyo
 
@@ -110,10 +110,12 @@ Comandi di base per generare, modificare e cancellare l'indice (TOC: table of co
 
 [Tmux Plugin Manager](https://github.com/tmux-plugins/tpm)
 
-La prima volta premere CTRL+B e poi I ()maiuscolo come Installa)
+La prima volta premere CTRL+B e poi **I** (maiuscolo come Installa)
 
-## Colori: terminale, Tmux e Vim
+[NordTmux](https://github.com/arcticicestudio/nord-tmux)
 
-[[Nord](https://github.com/arcticicestudio)
+## Colori usati: Terminale (iTerm2), Tmux e Vim
+
+[Nord](https://github.com/arcticicestudio)
 
 
