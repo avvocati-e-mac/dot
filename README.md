@@ -20,6 +20,8 @@ Aprire il terminale e digitare il seguente comando:
 curl -L 'https://raw.githubusercontent.com/Eriugen/dot/master/.vimrc' > .vimrc
 ```
 
+**Nota bene:** Questo comando scarica nella vostra home o cartella in cui state lavorando il file .vimrc. Questo file non sarà più sincronizzato in alcun modo con questo repository. È quindi solo una copia.
+
 ### Istruzioni per me o per chi fa un fork del mio dot repository
 
 Andare nella home con il seguente comando:
@@ -37,6 +39,18 @@ Creare nella home un link simbolico al file .vimrc contenuto all'interno della c
 ```
 ln -sfn ~/dot/.vimrc .vimrc
 ```
+
+Fatto cio c'è da entrare nella cartella dot ed impostare le credenziali locali come utente git.
+
+```
+cd dot
+git config user.name "your-user-name"
+git config user.email "your-email-addr"
+```
+
+Tra le virgolette fa inserito il nome che apparirà nella storia dei commit e l'email collegata.
+
+[Fonte](https://coderwall.com/p/wkqf9q/local-global-git-config)
 
 ### Creare la cartella di swp e undodir per Vim
 
