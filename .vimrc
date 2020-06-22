@@ -16,6 +16,10 @@ call plug#begin('~/.vim/plugged')
 
 " Statusline bella
 Plug 'https://github.com/vim-airline/vim-airline'
+Plug 'https://github.com/vim-airline/vim-airline-themes'
+
+" Colori di Vim
+Plug 'https://github.com/arcticicestudio/nord-vim'
 
 " Vim Goyo - ambiente di scrittura senza distrazioni
 
@@ -35,6 +39,7 @@ Plug 'https://github.com/ajorgensen/vim-markdown-toc'
 
 " Chiusura di Vim-plug
 call plug#end()
+
 
 " Salvare il documento ogni volta che si preme Esc quando si esce da Insert Mode
 " inoremap <Esc> <Esc>:w<CR>
@@ -108,15 +113,12 @@ set formatoptions+=l				" Black magic
 
 	map <leader>s :source<Space>~/.vimrc<CR>
 
-" # Color Scheme Solarized [qui scaricato](https://github.com/altercation/vim-colors-solarized)
-" TODO: non mi ci trovo ancora da trovare qualcosa di meglio
 
 syntax enable
 " set background=dark
 
-" colorscheme solarized
-
-" colorscheme desert
+" Schema di colori
+colorscheme nord
 
 " set laststatus=2 		" Mostra sempre la status line
 

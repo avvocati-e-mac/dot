@@ -105,3 +105,15 @@ Comandi di base per generare, modificare e cancellare l'indice (TOC: table of co
 ```
 
 [Fonte](https://github.com/ajorgensen/vim-markdown-toc)
+
+## Tmux.conf
+
+[Tmux Plugin Manager](https://github.com/tmux-plugins/tpm)
+
+La prima volta premere CTRL+B e poi I ()maiuscolo come Installa)
+
+## Colori: terminale, Tmux e Vim
+
+[[Nord](https://github.com/arcticicestudio)
+
+
