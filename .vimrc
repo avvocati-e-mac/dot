@@ -96,6 +96,10 @@ set formatoptions+=l				" Black magic
 	map <C-k> <C-w>k
 	map <C-l> <C-w>l
 
+" Salva documento
+
+  nmap <leader>w :w<CR>
+
 " Apri .vimrc (idea presa da Luke Smith)
 
 	map <leader>v :vsp<Space>~/.vimrc<CR>
