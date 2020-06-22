@@ -32,7 +32,7 @@ cd ~
 Poi clonare il repository con il comando 
 
 ```
-git clone git@github.com:Eriugen/dot.git .
+git clone https://github.com/Eriugen/dot.git 
 ```
 Creare nella home un link simbolico al file .vimrc contenuto all'interno della cartella /dot con il seguente comando:
 
