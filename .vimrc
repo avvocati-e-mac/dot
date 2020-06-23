@@ -66,9 +66,6 @@ call plug#begin('~/.vim/plugged')
 call plug#end()
 
 
-" Salvare il documento ogni volta che si preme Esc quando si esce da Insert Mode
-" inoremap <Esc> <Esc>:w<CR>
-
 " Possibilità di usare il moouse con Vim
 	:set mouse=a
 
@@ -113,9 +110,6 @@ set formatoptions-=t				" Don't change wrapping on existing lines
 set formatoptions+=l				" Black magic
 
 
-" Spell-check attiva / disattiva con <leader>o, 'o' per 'ortografia':
-	map <leader>o :setlocal spell! spelllang=it,en_us<CR>
-
 " Splits open at the bottom and right, which is non-retarded, unlike vim defaults. (Luke Smith)
 	set splitbelow splitright
 
@@ -129,17 +123,46 @@ set formatoptions+=l				" Black magic
 	map <C-k> <C-w>k
 	map <C-l> <C-w>l
 
-" Salva documento
+" ----------------------	
+" SCORCIATOIE A TASTIERA
+" ----------------------
 
-  nmap <leader>w :w<CR>
+" Spell-check attiva / disattiva con <leader>o, 'o' per 'ortografia':
+	map <leader>o :setlocal spell! spelllang=it,en_us<CR>
+
+" Salva documento
+  	nmap <leader>w :w<CR>
 
 " Apri .vimrc (idea presa da Luke Smith)
-
 	map <leader>v :vsp<Space>~/.vimrc<CR>
 
 " Ricarica il .vimrc
-
 	map <leader>s :source<Space>~/.vimrc<CR>
+
+" Aprire WhicKey - schiacciare una sola volta [spazio](spazio) 
+	nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
+
+" Aprire il file che si sta modificando in Marked 2
+	:nnoremap <leader>m :silent !open -a Marked\ 2.app '%:p'<cr>
+
+" Aprire file md convertito in PDF
+	map <leader>p :!open "%:r".pdf<CR>
+
+" Compila il file MD aperto in PDF con opzione base
+	map <leader>c :w! \| !pandoc "%" --pdf-engine=xelatex -o "%:r".pdf<CR>
+
+" Rende visibile i caratteri nascosti, come ad esempio gli spazi a fine riga, e i caratteri di tabulazione
+	nmap <leader>l :set list!<CR>
+
+" Inserimento documenti per PCT in Virtual block mode / Visuale Blocco
+	vnoremap <leader>w I[doc00]: <esc>
+
+" Salvare il documento ogni volta che si preme Esc quando si esce da Insert Mode
+" inoremap <Esc> <Esc>:w<CR>
+
+" ---------------------
+" FINE SCORCIATOIE
+" ---------------------
 
 
 syntax enable
@@ -148,25 +171,9 @@ syntax enable
 " Schema di colori
 colorscheme nord
 
-" set laststatus=2 		" Mostra sempre la status line
-
-"set statusline+=%t		" il percorso del file
-" set statusline+=%{&ff} " Tipo di file
-" set statusline+=%h		" Help file flag
-" set statusline+=%m		" Se il file è stato modifica
-" set statusline+=%r		" Flag file in sola lettura
-"set statusline+=%c,		" La colonna su cui è il cursore
-" set statusline+=%l/%L		" La linea su cui è il cursore ed il numero di linee totale
-" set statusline+=\ %P		" Mostra la propria posizione in percentuale rispetto alla lunghezza complessiva del documento
-
 set wildmode=longest,list,full 		" Attiva auto-completamento
 set wildmenu 				" Mostra le opzioni di completamento della command line
 
-" if has('gui_running')
-  "  set background=light
-"else
- "   set background=dark
-" endif
 
 " Documentazione in italiano ed inglese (c'è da scaricare però la documentazione tradotta in italiano da http://www.pluto.it/files/ildp/traduzioni/vimhelp-it/index.html)
 :set helplang=it,en
@@ -176,19 +183,6 @@ set wildmenu 				" Mostra le opzioni di completamento della command line
 map <C-Up> ddkP
 map <C-Down> ddp
 
-" Rende visibile i caratteri nascosti, come ad esempio gli spazi a fine riga, e i caratteri di tabulazione
-nmap <leader>l :set list!<CR>
-
-" Aprire il file che si sta modificando in Marked 2
-:nnoremap <leader>m :silent !open -a Marked\ 2.app '%:p'<cr>
-
-
-" Aprire file md convertito in PDF
-
-	map <leader>p :!open "%:r".pdf<CR>
-
-" Compila il file MD aperto in PDF con opzione base
-	map <leader>c :w! \| !pandoc "%" --pdf-engine=xelatex -o "%:r".pdf<CR>
 
 " AUTOMAZIONI UTILI
 
@@ -211,20 +205,6 @@ map <leader><leader> <Esc>/<++><Enter>"_c4l
 	autocmd FileType tex inoremap xcp \parencite{}<++><Esc>T{i
 	" Smallcap
 	autocmd FileType tex inoremap xsc \textsc{}<Space><++><Esc>T{i
-
-"MARKDOWN
-
-	autocmd Filetype markdown,rmd map <leader>w yiWi[<esc>Ea](<esc>pa)
-	autocmd Filetype markdown,rmd inoremap xn ---<Enter><Enter>
-	autocmd Filetype markdown,rmd inoremap xb ****<++><Esc>F*hi
-	autocmd Filetype markdown,rmd inoremap xs ~~~~<++><Esc>F~hi
-	autocmd Filetype markdown,rmd inoremap xc __<++><Esc>F_i
-	autocmd Filetype markdown,rmd inoremap xh ====<Space><++><Esc>F=hi
-	autocmd Filetype markdown,rmd inoremap xi ![](<++>)<++><Esc>F[a
-	autocmd Filetype markdown,rmd inoremap xa [](<++>)<++><Esc>F[a
-	autocmd Filetype markdown,rmd inoremap x1 #<Space><Enter><++><Esc>kA
-	autocmd Filetype markdown,rmd inoremap x2 ##<Space><Enter><++><Esc>kA
-	autocmd Filetype markdown,rmd inoremap x3 ###<Space><Enter><++><Esc>kA
 	autocmd Filetype markdown,rmd inoremap xl --------<Enter>
 
 " Dialetto LaTeX
@@ -267,9 +247,6 @@ inoremap `I Ì
 inoremap `O Ò
 inoremap `U Ù
 inoremap euro €
-
-" Inserimento documenti per PCT in Virtual block mode / Visuale Blocco
-vnoremap <leader>w I[doc00]: <esc>
 
 " Settaggi base delle ripiegature (fold)
 
