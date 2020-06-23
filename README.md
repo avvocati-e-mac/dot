@@ -118,6 +118,18 @@ Permette di vedere le scorciatorie a tastiera e personalizzarne alcune.
 
 [Link al repositorty](https://github.com/liuchengxu/vim-which-key)
 
+## Fugitive: plugin per GIT
+
+Fugitive è il primo plug-in Vim per Git. O forse è il primo plugin Git per Vim? Ad ogni modo, è "così fantastico, dovrebbe essere illegale". Ecco perché si chiama Fugitive (fuggitivo in italiano).
+
+[Link a fonte](https://github.com/tpope/vim-fugitive)
+
+Comandi di base:
+
+* `:Git`è l’equivalente di digitare `Git` a terminale. Si può abbreviare con il semplice comando `:G`che consiglio di usare per velocizzare la digitazione.
+* `:Git add` ed il nome del / dei file da allestire / organizzare (staged) per il commit.
+* `:Git commit`seguito da `-m`e le virgolette all'interno del quale indicare il testo del commit serve per eseguire il commit delle modifiche allestite / organizzate (staged).
+
 ### FZF - fuzzy finder (digita il nome di un file e te lo trova …)
 
 È necessario installare FZF con Hombrew, per macOS, o con un altro gestore di pacchetti con Linux.
