@@ -6,6 +6,14 @@ let mapleader=" "
 
 filetype plugin on
 
+" auto-install vim-plug
+if empty(glob('~/.config/nvim/autoload/plug.vim'))
+  silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  "autocmd VimEnter * PlugInstall
+  "autocmd VimEnter * PlugInstall | source $MYVIMRC
+endif
+
 " Vim-plug - gestore plugin fonte: https://github.com/junegunn/vim-plug
 " : PlugInstall per installare un plugin aggiunto
 " : PlugUpdate per aggiornare i plugin installati
@@ -15,27 +23,44 @@ filetype plugin on
 call plug#begin('~/.vim/plugged')
 
 " Statusline bella
-Plug 'https://github.com/vim-airline/vim-airline'
-Plug 'https://github.com/vim-airline/vim-airline-themes'
+	Plug 'https://github.com/vim-airline/vim-airline'
+	Plug 'https://github.com/vim-airline/vim-airline-themes'
 
 " Colori di Vim
-Plug 'https://github.com/arcticicestudio/nord-vim'
+	Plug 'https://github.com/arcticicestudio/nord-vim'
 
 " Vim Goyo - ambiente di scrittura senza distrazioni
 
-Plug  'https://github.com/junegunn/goyo.vim'
+	Plug  'https://github.com/junegunn/goyo.vim'
 
 " Vim-pandoc e  Vim-pandoc-syntax (DA TESTARE)
 
- Plug  'https://github.com/vim-pandoc/vim-pandoc'
- Plug  'https://github.com/vim-pandoc/vim-pandoc-syntax'
+	Plug  'https://github.com/vim-pandoc/vim-pandoc'
+	Plug  'https://github.com/vim-pandoc/vim-pandoc-syntax'
 
 " Creazione indice per file MD (uso per GitHub)
 " Per creare il TOC digitare :GenerateMarkdownTOC
 " e verrà creato nella posizione in cui il cursore 
 " si trova
 
-Plug 'https://github.com/ajorgensen/vim-markdown-toc'
+	Plug 'https://github.com/ajorgensen/vim-markdown-toc'
+
+" Integrazione con GIT 
+    Plug 'mhinz/vim-signify'
+    Plug 'airblade/vim-gitgutter'
+    Plug 'tpope/vim-fugitive'
+    Plug 'tpope/vim-rhubarb'
+    Plug 'junegunn/gv.vim'
+
+" Look Up Key Bindings
+    Plug 'liuchengxu/vim-which-key'
+
+" Undo tree
+    Plug 'mbbill/undotree'
+
+" Fuzzy Search
+    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+    Plug 'junegunn/fzf.vim'
 
 " Chiusura di Vim-plug
 call plug#end()
@@ -43,6 +68,9 @@ call plug#end()
 
 " Salvare il documento ogni volta che si preme Esc quando si esce da Insert Mode
 " inoremap <Esc> <Esc>:w<CR>
+
+" Possibilità di usare il moouse con Vim
+	:set mouse=a
 
 set nocompatible				" vim-specific settings, non-vi-compatible
 set backspace=indent,eol,start 			" Allow backspace in insert mode
