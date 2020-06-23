@@ -118,6 +118,12 @@ Permette di vedere le scorciatorie a tastiera e personalizzarne alcune.
 
 [Link al repositorty](https://github.com/liuchengxu/vim-which-key)
 
+### FZF - fuzzy finder (digita il nome di un file e te lo trova …)
+
+È necessario installare FZF con Hombrew, per macOS, o con un altro gestore di pacchetti con Linux.
+
+[Fonte con istruzioni](https://github.com/junegunn/fzf#as-vim-plugin)
+
 ## Tmux.conf
 
 [Tmux Plugin Manager](https://github.com/tmux-plugins/tpm)
