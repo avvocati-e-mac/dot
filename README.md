@@ -127,10 +127,12 @@ Fugitive è il primo plug-in Vim per Git. O forse è il primo plugin Git per Vim
 Comandi di base:
 
 * `:Git`è l’equivalente di digitare `Git` a terminale. Si può abbreviare con il semplice comando `:G`che consiglio di usare per velocizzare la digitazione.
-* `:Git add` ed il nome del / dei file da allestire / organizzare (staged) per il commit.
+* `:Git add` ed il nome del / dei file da allestire / organizzare (staged) per il commit, se si deve allestire solo il file su cui si sta lavorando è possibile usare semplicemente il comando `:Gwrite`.
 * `:Git commit`seguito da `-m`e le virgolette all'interno del quale indicare il testo del commit serve per eseguire il commit delle modifiche allestite / organizzate (staged).
-
+* `:Git push`per inviare il commit al server Git (remoto, tipo online come GitHub o interno alla rete)
 * `:Gbrowse` apre il documento su cui si sta lavorando nel browser su GitHub o altri repository online.
+
+[Link per maggiori informazioni](https://github.com/tpope/vim-fugitive), alternativamente è possibile digitare il comando `:help fugitive`.
 
 ### FZF - fuzzy finder (digita il nome di un file e te lo trova …)
 
