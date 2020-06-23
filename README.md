@@ -130,6 +130,8 @@ Comandi di base:
 * `:Git add` ed il nome del / dei file da allestire / organizzare (staged) per il commit.
 * `:Git commit`seguito da `-m`e le virgolette all'interno del quale indicare il testo del commit serve per eseguire il commit delle modifiche allestite / organizzate (staged).
 
+* `:Gbrowse` apre il documento su cui si sta lavorando nel browser su GitHub o altri repository online.
+
 ### FZF - fuzzy finder (digita il nome di un file e te lo trova …)
 
 È necessario installare FZF con Hombrew, per macOS, o con un altro gestore di pacchetti con Linux.
