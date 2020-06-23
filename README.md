@@ -67,6 +67,10 @@ mkdir .vim/undodir
 
 ### Come installare i plugin
 
+Ho aggiunto uno script introduttivo per cui non dovrebbe esserci la necessità di installare il gestore dei plugin …
+
+È un esperimento, non l'ho ancora testato ma copiato da un altro utente [Fonte](https://github.com/benbrastmckie/.config), quindi per ora lascio anche la parte di guida all’installazione.
+
 In Vim Unix (Linux e macOS) digitare a terminale il seguente comando
 
 ```
@@ -92,6 +96,8 @@ Per visualizzare in Vim le scorciatoie personalizzate che ho creato digitare:
 
 ## Plugin installati in Vim
 
+Ho aggiunto una notevole quantità di plug-in, molti li devo ancora testare.
+
 ### Goyo
 
 ### Vim-airline gestore della statusline
@@ -105,6 +111,12 @@ Comandi di base per generare, modificare e cancellare l'indice (TOC: table of co
 ```
 
 [Fonte](https://github.com/ajorgensen/vim-markdown-toc)
+
+## Vim-which-key
+
+Permette di vedere le scorciatorie a tastiera e personalizzarne alcune.
+
+[Link al repositorty](https://github.com/liuchengxu/vim-which-key)
 
 ## Tmux.conf
 

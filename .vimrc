@@ -14,6 +14,10 @@ if empty(glob('~/.config/nvim/autoload/plug.vim'))
   "autocmd VimEnter * PlugInstall | source $MYVIMRC
 endif
 
+" ---------------------
+"  PLUG-IN
+" ---------------------
+
 " Vim-plug - gestore plugin fonte: https://github.com/junegunn/vim-plug
 " : PlugInstall per installare un plugin aggiunto
 " : PlugUpdate per aggiornare i plugin installati
@@ -65,6 +69,9 @@ call plug#begin('~/.vim/plugged')
 " Chiusura di Vim-plug
 call plug#end()
 
+" ---------------------
+" ﮤ FINE PLUGIN
+" --------------------- 
 
 " Possibilità di usare il moouse con Vim
 	:set mouse=a
