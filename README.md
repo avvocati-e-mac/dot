@@ -38,6 +38,8 @@ Creare nella home un link simbolico al file .vimrc contenuto all'interno della c
 
 ```
 ln -sfn ~/dot/.vimrc .vimrc
+ln -sfn ~/dot/.zshrc .zshrc
+ln -sfn ~/dot/.tmux.conf .tmux.conf
 ```
 
 Fatto ciò c'è da entrare nella cartella dot ed impostare le credenziali locali come utente git.
