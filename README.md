@@ -102,6 +102,18 @@ Per visualizzare in Vim le scorciatoie personalizzate che ho creato digitare:
 :map <leader>
 ```
 
+## Personalizzazione per il Markdown
+
+Ho fatto alcune modifiche perchè non mi piace come viene evidenziata la sintassi del markdown …
+
+In particolare ho impostato nel .vimrc che non venga nascosta se non si sta editando la specifica riga il markup del markdown.
+
+`set conceallevel=0`
+
+Ho disinstallato (commentandoli) i plug-in per pandoc / markdown ed aggiunto una scociatoia a tastiera per attivare l’evidenziazione del markdown … allo stato non ho capito perché non si attiva autonomamente come dovrebbe.
+
+La scociatoia è **leader+n**, inizio ad avere poche combinazioni libere.
+
 ## Plugin installati in Vim
 
 Ho aggiunto una notevole quantità di plug-in, molti li devo ancora testare.
