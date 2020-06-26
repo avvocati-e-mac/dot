@@ -1,5 +1,7 @@
-" Test per vedere se risconosce correttamente i file .md
-" autocmd BufNewFile,BufFilePre,BufRead *.md set filetype=markdown.pandoc
+"  Test per vedere se risconosce correttamente i file .md
+set conceallevel=0	" Annulla la funzione che nasconde il markup del markdown mando non lo si
+					" sta editando
+au BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
 
 " Spazio come Leaderkey
 let mapleader=" "
@@ -39,8 +41,8 @@ call plug#begin('~/.vim/plugged')
 
 " Vim-pandoc e  Vim-pandoc-syntax (DA TESTARE)
 
-	Plug  'https://github.com/vim-pandoc/vim-pandoc'
-	Plug  'https://github.com/vim-pandoc/vim-pandoc-syntax'
+"	Plug  'https://github.com/vim-pandoc/vim-pandoc'
+"	Plug  'https://github.com/vim-pandoc/vim-pandoc-syntax'
 
 " Creazione indice per file MD (uso per GitHub)
 " Per creare il TOC digitare :GenerateMarkdownTOC
@@ -72,6 +74,11 @@ call plug#end()
 " ---------------------
 " ﮤ FINE PLUGIN
 " --------------------- 
+
+"  -- CONFIGURAZIONE PLUGIN --
+
+"  let g:pandoc#syntax#style#emphases = 1 " c'è un problema … riga per configurare la sintassi di  vim-pandoc-syntax
+
 
 " Possibilità di usare il moouse con Vim
 	:set mouse=a
@@ -136,6 +143,9 @@ set formatoptions+=l				" Black magic
 
 " Spell-check attiva / disattiva con <leader>o, 'o' per 'ortografia':
 	map <leader>o :setlocal spell! spelllang=it,en_us<CR>
+
+" Attiva e disattiva la colorazione del markdown
+	map <leader>n :setlocal syntax=markdown<CR>
 
 " Salva documento
   	nmap <leader>w :w<CR>
