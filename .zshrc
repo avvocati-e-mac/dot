@@ -102,5 +102,8 @@ alias zshrc="vim ~/.zshrc"
 alias zshsource="source ~/.zshrc"
 alias aem="cd '/Users/filippostrozzi/Nextcloud/Avvocati e Mac/00 - A&M in prep NC'"
 alias aem-video="cd '/Users/filippostrozzi/Library/Mobile Documents/com~apple~CloudDocs/Avvocati e Mac/in preparazione/06 - video' "
+
+source ~/.alias-rete
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
