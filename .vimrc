@@ -68,6 +68,9 @@ call plug#begin('~/.vim/plugged')
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
 
+" Pandoc Preview plugin
+	Plug 'https://github.com/lingnand/pandoc-preview.vim'
+
 " Chiusura di Vim-plug
 call plug#end()
 
@@ -164,6 +167,16 @@ set formatoptions+=l				" Black magic
 
 " Aprire file md convertito in PDF
 	map <leader>p :!open "%:r".pdf<CR>
+
+" Aprire file md convertito in PDF in Zathura
+"	map <leader>z :silent !zathura "%:r".pdf<CR>
+
+" Aprire file md convertito in PDF in Skim
+"	map <leader>z :silent !open -a skim "%:r".pdf<CR>
+
+" Aprire i file MD con Zathura usando plugin pandoc-preview
+	nnoremap <leader>z :PandocPreview<cr>
+	let g:pandoc_preview_pdf_cmd = "zathura"
 
 " Compila il file MD aperto in PDF con opzione base
 	map <leader>c :w! \| !pandoc "%" --pdf-engine=xelatex -o "%:r".pdf<CR>
