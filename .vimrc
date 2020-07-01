@@ -86,6 +86,13 @@ call plug#end()
 " Possibilità di usare il moouse con Vim
 	:set mouse=a
 
+" Configurazione Netrw (broswer file di Vim)
+
+let g:netrw_banner = 0 " Toglie la barra in alto di spiegazioni
+let g:netrw_liststyle = 3 " Stile dell'alberatura dei file
+let g:netrw_browse_split = 3 " File aperto in un nuovo tab (1 split orrizzontale, 2 split veritcale, 4 nella precedente finestra)
+let g:netrw_winsize = 25 " split di 25
+
 set nocompatible				" vim-specific settings, non-vi-compatible
 set backspace=indent,eol,start 			" Allow backspace in insert mode
 set number					" Line numbers
@@ -149,6 +156,10 @@ set formatoptions+=l				" Black magic
 
 " Attiva e disattiva la colorazione del markdown
 	map <leader>n :setlocal syntax=markdown<CR>
+
+" Apre l'esplora risorse di Vim Netrw
+
+	map <leader>e :Vexplore<CR>
 
 " Salva documento
   	nmap <leader>w :w<CR>
