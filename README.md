@@ -1,22 +1,23 @@
 In questo repository ho caricato i miei “dot file” per uso personale … ma se a qualcuno possono interessare ovviamente sono a disposizione!
 
 
-
-1. [Come installare il mio .vimrc](#come-installare-il-mio-vimrc)
+1. [Installare l'help tradotto in italiano](#installare-lhelp-tradotto-in-italiano)
+2. [Come installare il mio .vimrc](#come-installare-il-mio-vimrc)
 	1. [Istruzioni per me o per chi fa un fork del mio dot repository](#istruzioni-per-me-o-per-chi-fa-un-fork-del-mio-dot-repository)
 	2. [Creare la cartella di swp e undodir per Vim](#creare-la-cartella-di-swp-e-undodir-per-vim)
 	3. [Come installare i plugin](#come-installare-i-plugin)
-2. [Scorciatoie a tastiera personalizzate](#scorciatoie-a-tastiera-personalizzate)
-3. [Plugin installati in Vim](#plugin-installati-in-vim)
+3. [Scorciatoie a tastiera personalizzate](#scorciatoie-a-tastiera-personalizzate)
+4. [Personalizzazione per il Markdown](#personalizzazione-per-il-markdown)
+5. [Plugin installati in Vim](#plugin-installati-in-vim)
 	1. [Goyo](#goyo)
 	2. [Vim-airline gestore della statusline](#vim-airline-gestore-della-statusline)
 	3. [Vim-pandoc e  Vim-pandoc-syntax (DA TESTARE)](#vim-pandoc-e--vim-pandoc-syntax-da-testare)
 	4. [Vim-markdown-toc](#vim-markdown-toc)
-4. [Vim-which-key](#vim-which-key)
-5. [Fugitive: plugin per GIT](#fugitive-plugin-per-git)
+6. [Vim-which-key](#vim-which-key)
+7. [Fugitive: plugin per GIT](#fugitive-plugin-per-git)
 	1. [FZF - fuzzy finder (digita il nome di un file e te lo trova …)](#fzf---fuzzy-finder-digita-il-nome-di-un-file-e-te-lo-trova-)
-6. [Tmux.conf](#tmuxconf)
-7. [Colori usati: Terminale (iTerm2), Tmux e Vim](#colori-usati-terminale-iterm2-tmux-e-vim)
+8. [Tmux.conf](#tmuxconf)
+9. [Colori usati: Terminale (iTerm2), Tmux e Vim](#colori-usati-terminale-iterm2-tmux-e-vim)
 
 ## Installare l'help tradotto in italiano
 
