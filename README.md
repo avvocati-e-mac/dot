@@ -18,6 +18,54 @@ In questo repository ho caricato i miei “dot file” per uso personale … ma
 6. [Tmux.conf](#tmuxconf)
 7. [Colori usati: Terminale (iTerm2), Tmux e Vim](#colori-usati-terminale-iterm2-tmux-e-vim)
 
+## Installare l'help tradotto in italiano
+
+Andare alla pagina web che trovate [qui](http://www.pluto.it/sites/default/files/ildp/traduzioni/vimhelp-it/index.html).
+
+Scegliere la versione dell'help corrispondente alla propria versione di Vim.
+
+Per sapere quale versione di Vim si ha instsallato digitare a Terminale il seguente comando:
+
+`vim --version`
+
+Copiare l'URL del file **itx** e digitare a terminale:
+
+```
+wget http://www.pluto.it/sites/default/files/ildp/traduzioni/vimhelp-it/vim82/vimhelp82-it-itx.tar.gz
+```
+Verrà scaricato nella cartella in cui siete il file TAR `vimhelp82-it-itx.tar.gz` il nome ovviamente cambia in base alla versione di Vim scaricata dell'help.
+
+Estraete quindi i file contenuti nel TAR digitando:
+
+```
+tar -xvzf vimhelp82-it-itx.tar.gz
+```
+
+Troverete quindi una sotto directory denominata `itx`, entratici dentro con il comando `cd itx` e poi digitate il seguente comando:
+
+```
+cp * /usr/share/vim/vim82/doc
+```
+
+Per sapere in quale cartella andare a copiare i file entrate in Vim e digitate:
+
+```
+:echo $MYVIMRUNTIME
+```
+
+Comparirà a video un percorso copiatelo ed aggiungeteci il postfisso `/doc`.
+
+La cartella che ho indicato nell'esempio è quella tipica delle versioni Unix per Vim 8.2.
+
+Ci siamo quasi …
+
+Ora digitate il comando per cambiare diritti ai file, abitualmente dall'utente con cui siete loggati a `root`.
+
+```
+sudo chown root:root /usr/share/vim/vim82/doc/* 
+```
+Se tutto va bene ora potrete avere l'help in italiano digitando `:h @it` o, se usate il mio `.vimrc` in autmatico perché ho inserito il comando `set helplang=it,en` che abilita l'help in italiano (quando è disponibile, non tutto è stato tradotto) o quello inglese se non è disponibile la traduzione in italiano.
+
 ## Come installare il mio .vimrc
 
 Aprire il terminale e digitare il seguente comando:
