@@ -68,7 +68,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git osx mosh vi-mode)
+plugins=(git osx mosh vi-mode fzf)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -104,3 +104,8 @@ alias aem="cd '/Users/filippostrozzi/Nextcloud/Avvocati e Mac/00 - A&M in prep N
 alias aem-video="cd '/Users/filippostrozzi/Library/Mobile Documents/com~apple~CloudDocs/Avvocati e Mac/in preparazione/06 - video' "
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# Per far funzionare Fuzzy Finder FZF
+# Sito di rif. : https://jdhao.github.io/2018/11/05/fzf_install_use/
+export FZF_BASE="$HOME/Docments/.fzf"
+
