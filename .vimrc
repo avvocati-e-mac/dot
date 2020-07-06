@@ -68,6 +68,9 @@ call plug#begin('~/.vim/plugged')
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
 
+" Pandoc Preview plugin
+	Plug 'https://github.com/lingnand/pandoc-preview.vim'
+
 " Chiusura di Vim-plug
 call plug#end()
 
@@ -82,6 +85,13 @@ call plug#end()
 
 " Possibilità di usare il moouse con Vim
 	:set mouse=a
+
+" Configurazione Netrw (broswer file di Vim)
+
+let g:netrw_banner = 0 " Toglie la barra in alto di spiegazioni
+let g:netrw_liststyle = 3 " Stile dell'alberatura dei file
+let g:netrw_browse_split = 3 " File aperto in un nuovo tab (1 split orrizzontale, 2 split veritcale, 4 nella precedente finestra)
+let g:netrw_winsize = 25 " split di 25
 
 set nocompatible				" vim-specific settings, non-vi-compatible
 set backspace=indent,eol,start 			" Allow backspace in insert mode
@@ -147,6 +157,10 @@ set formatoptions+=l				" Black magic
 " Attiva e disattiva la colorazione del markdown
 	map <leader>n :setlocal syntax=markdown<CR>
 
+" Apre l'esplora risorse di Vim Netrw
+
+	map <leader>e :Vexplore<CR>
+
 " Salva documento
   	nmap <leader>w :w<CR>
 
@@ -164,6 +178,16 @@ set formatoptions+=l				" Black magic
 
 " Aprire file md convertito in PDF
 	map <leader>p :!open "%:r".pdf<CR>
+
+" Aprire file md convertito in PDF in Zathura
+"	map <leader>z :silent !zathura "%:r".pdf<CR>
+
+" Aprire file md convertito in PDF in Skim
+"	map <leader>z :silent !open -a skim "%:r".pdf<CR>
+
+" Aprire i file MD con Zathura usando plugin pandoc-preview
+	nnoremap <leader>z :PandocPreview<cr>
+	let g:pandoc_preview_pdf_cmd = "zathura"
 
 " Compila il file MD aperto in PDF con opzione base
 	map <leader>c :w! \| !pandoc "%" --pdf-engine=xelatex -o "%:r".pdf<CR>
