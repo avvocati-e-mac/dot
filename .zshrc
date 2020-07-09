@@ -75,7 +75,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git osx mosh vi-mode)
+plugins=(git osx mosh vi-mode fzf)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -115,6 +115,12 @@ source ~/.alias-rete
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+<<<<<<< HEAD
+# Per far funzionare Fuzzy Finder FZF
+# Sito di rif. : https://jdhao.github.io/2018/11/05/fzf_install_use/
+export FZF_BASE="$HOME/Docments/.fzf"
+
+=======
 # Sistema di completamento automatico moderno
 #  copiato da qui: https://scottlinux.com/2011/08/19/quick-intro-to-zsh-auto-complete/
 #
@@ -137,3 +143,4 @@ zstyle ':completion:*' verbose true
 
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
+>>>>>>> f963147b38e31cf8dec21b949823969019ab3f64
