@@ -72,7 +72,7 @@ Se tutto va bene ora potrete avere l'help in italiano digitando `:h @it` o, se u
 Aprire il terminale e digitare il seguente comando:
 
 ```
-curl -L 'https://raw.githubusercontent.com/Eriugen/dot/master/.vimrc' > .vimrc
+curl -L 'https://raw.githubusercontent.com/avvocati-e-mac/dot/master/.vimrc' > .vimrc
 ```
 
 **Nota bene:** Questo comando scarica nella vostra home o cartella in cui state lavorando il file .vimrc. Questo file non sarà più sincronizzato in alcun modo con questo repository. È quindi solo una copia.
@@ -87,7 +87,7 @@ cd ~
 Poi clonare il repository con il comando 
 
 ```
-git clone https://github.com/Eriugen/dot.git 
+git clone https://github.com/avvocati-e-mac/dot.git 
 ```
 Creare nella home un link simbolico ai files di configurazione vari  contenuti all'interno della cartella /dot con i seguenti comandi:
 
