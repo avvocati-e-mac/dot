@@ -176,6 +176,11 @@ set formatoptions+=l				" Black magic
 " Aprire il file che si sta modificando in Marked 2
 	:nnoremap <leader>m :silent !open -a Marked\ 2.app '%:p'<cr>
 
+" Ridisegna la schermata di Vim (quando l’apertura di app come Marked 2
+" confondono la finestra principale di Vim) 
+
+	:noremap <leader>r :silent redraw!<cr>
+
 " Aprire file md convertito in PDF
 	map <leader>p :!open "%:r".pdf<CR>
 
