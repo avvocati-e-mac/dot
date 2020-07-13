@@ -221,4 +221,31 @@ La prima volta premere CTRL+B e poi **I** (maiuscolo come Installa)
 
 [Nord](https://github.com/arcticicestudio)
 
+## Personalizzazione terminale: Zshrc
 
+Siccome macOS Catalina è passato a ZSH come shell da terminale ho deciso di utilizzare come mia shell per tutti i miei dispositivi ZSH.
+
+Ho installato per rendermi la vita più semplice [Oh my ZSH](https://github.com/ohmyzsh/ohmyzsh).
+
+```
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+```
+
+### Plugin di Oh-my-zsh
+
+Ho attivato anche vari [plugin](https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins) (in via sperimentale per ora).
+
+Alcuni sono già installati tramite lo script di Oh my ZSH ma altri vanni installati appositamente.
+
+### Installazione zsh-autosuggestions e zsh-syntax-highlighting
+
+[Zsh-autosuggestion](https://github.com/zsh-users/zsh-autosuggestions) copiando nel terminale:
+
+```
+git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
+```
+e [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting) copiando nel terminale:
+
+```
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
+```
