@@ -12,7 +12,6 @@ export ZSH="/Users/filippostrozzi/.oh-my-zsh"
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
-
 # Uncomment the following line to enable command auto-correction.
 ENABLE_CORRECTION="true"
 

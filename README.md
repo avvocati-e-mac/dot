@@ -249,3 +249,6 @@ e [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting
 ```
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
 ```
+Questa soluzione funziona ma non mi soddisfa molto … tuttavia ho provato ad installare con Hombrew i due plugin ma lo script di Oh my ZSH non rileva i plugin anche se li ho inseriti nella cartella dei plugin con un link simbolico.
+
+**NOTA BENE**: visto che sono dei cloni di repository bisogna ricordarsi ogni tanto di aggiornarli con un `git pull`.
