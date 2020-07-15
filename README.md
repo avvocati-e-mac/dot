@@ -66,7 +66,7 @@ Ci siamo quasi …
 Ora digitate il comando per cambiare diritti ai file, abitualmente dall'utente con cui siete loggati a `root`.
 
 ```
-sudo chown root:root /usr/share/vim/vim82/doc/* 
+sudo chown root:root /usr/share/vim/vim82/doc/*
 ```
 Se tutto va bene ora potrete avere l'help in italiano digitando `:h @it` o, se usate il mio `.vimrc` in autmatico perché ho inserito il comando `set helplang=it,en` che abilita l'help in italiano (quando è disponibile, non tutto è stato tradotto) o quello inglese se non è disponibile la traduzione in italiano.
 
@@ -87,10 +87,10 @@ Andare nella home con il seguente comando:
 ```
 cd ~
 ```
-Poi clonare il repository con il comando 
+Poi clonare il repository con il comando
 
 ```
-git clone https://github.com/avvocati-e-mac/dot.git 
+git clone https://github.com/avvocati-e-mac/dot.git
 ```
 Creare nella home un link simbolico ai files di configurazione vari  contenuti all'interno della cartella /dot con i seguenti comandi:
 
@@ -120,7 +120,7 @@ e i salvataggi per gli undo tra differenti sessioni.
 Da terminale digitare:
 
 ```
-cd ~	
+cd ~
 mkdir .vim/swp
 mkdir .vim/undodir
 ```
@@ -138,7 +138,7 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ```
 
-[Fonte](https://github.com/junegunn/vim-plug#installation)  
+[Fonte](https://github.com/junegunn/vim-plug#installation)
 
 A questo punto, in Vim, digitare:
 ```
