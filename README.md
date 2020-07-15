@@ -18,6 +18,9 @@ In questo repository ho caricato i miei “dot file” per uso personale … ma
 	1. [FZF - fuzzy finder (digita il nome di un file e te lo trova …)](#fzf---fuzzy-finder-digita-il-nome-di-un-file-e-te-lo-trova-)
 8. [Tmux.conf](#tmuxconf)
 9. [Colori usati: Terminale (iTerm2), Tmux e Vim](#colori-usati-terminale-iterm2-tmux-e-vim)
+10. [Personalizzazione terminale: Zshrc](#personalizzazione-terminale-zshrc)
+	1. [Plugin di Oh-my-zsh](#plugin-di-oh-my-zsh)
+	2. [Installazione zsh-autosuggestions e zsh-syntax-highlighting](#installazione-zsh-autosuggestions-e-zsh-syntax-highlighting)
 
 ## Installare l'help tradotto in italiano
 
