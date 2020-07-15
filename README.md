@@ -176,7 +176,7 @@ Ho aggiunto una notevole quantità di plug-in, molti li devo ancora testare.
 ### Vim-pandoc e  Vim-pandoc-syntax (DA TESTARE)
 ### Vim-markdown-toc
 
-Comandi di base per generare, modificare e cancellare l'indice (TOC: table of contents
+Comandi di base per generare, modificare e cancellare l'indice (TOC: table of contents)
 
 ```
 :GenerateMarkdownTOC # Genera un nuovo indice
