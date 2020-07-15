@@ -39,6 +39,10 @@ call plug#begin('~/.vim/plugged')
 
 	Plug  'https://github.com/junegunn/goyo.vim'
 
+" Cursormode - cambia il colore del cursore in dipendenza del differente modo in cui si è
+
+	Plug 'https://github.com/vheon/vim-cursormode'
+
 " Vim-pandoc e  Vim-pandoc-syntax (DA TESTARE)
 
 "	Plug  'https://github.com/vim-pandoc/vim-pandoc'
@@ -78,10 +82,22 @@ call plug#end()
 " ﮤ FINE PLUGIN
 " --------------------- 
 
-"  -- CONFIGURAZIONE PLUGIN --
+"  -- CONFIGURAZIONE PLUGIN ---
 
 "  let g:pandoc#syntax#style#emphases = 1 " c'è un problema … riga per configurare la sintassi di  vim-pandoc-syntax
 
+" Statusline in alto invece che in basso
+let g:airline_statusline_ontop=1
+" Abilitazione della visualizzazione dei tab in alto
+let g:airline#extensions#tabline#enabled = 1
+" Fonts powrline
+let g:airline_powerline_fonts = 1
+" Attiva l'integrazione di Cursormode
+let g:airline#extensions#cursormode#enabled = 1
+" Conteggio delle parole come parole e non word
+let g:airline#extensions#wordcount#formatter#default#fmt = '%s parole'
+
+" --- FINE CONFIGURAZIONE PLUGINI ---
 
 " Possibilità di usare il moouse con Vim
 	:set mouse=a
