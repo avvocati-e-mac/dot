@@ -347,8 +347,14 @@ autocmd BufWinEnter * silent loadview
 
 " FUNZIONE PER RIPIEGARE I CAPITOLI NEI FILE IN MARKDOWN (fold)
 
-setlocal foldmethod=expr
-setlocal foldexpr=MarkdownFolds()
+function! RipiegaMD()
+	setlocal foldmethod=expr
+	setlocal foldexpr=MarkdownFolds()
+	setlocal foldtext=MarkdownFoldText()
+	call MarkdownFold()
+	call MarkdownFoldText()
+endfunction
+
 
 function! MarkdownFolds()
 	let thisline = getline(v:lnum)
@@ -363,7 +369,6 @@ elseif match(thisline, '^#') >= 0
 	endif
 endfunction
 
-setlocal foldtext=MarkdownFoldText()
 
 function! MarkdownFoldText()
     "get first non-blank line
