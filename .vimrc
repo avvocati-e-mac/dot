@@ -1,6 +1,7 @@
 "  Test per vedere se risconosce correttamente i file .md
 set conceallevel=0	" Annulla la funzione che nasconde il markup del markdown mando non lo si
 					" sta editando
+filetype on
 au BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
 
 " Spazio come Leaderkey
@@ -348,11 +349,10 @@ autocmd BufWinEnter * silent loadview
 " FUNZIONE PER RIPIEGARE I CAPITOLI NEI FILE IN MARKDOWN (fold)
 
 " Se è un file di tipo MD allora fai partir la funzione
-if filetype=markdown
 
-setlocal foldmethod=expr
-setlocal foldexpr=MarkdownFolds()
-setlocal foldtext=MarkdownFoldText()
+autocmd BufRead *.md setlocal foldmethod=expr
+autocmd BufRead *.md setlocal foldexpr=MarkdownFolds()
+autocmd BufRead *.md setlocal foldtext=MarkdownFoldText()
 
 
 function! MarkdownFolds()
