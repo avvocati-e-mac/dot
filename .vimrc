@@ -347,6 +347,9 @@ autocmd BufWinEnter * silent loadview
 
 " FUNZIONE PER RIPIEGARE I CAPITOLI NEI FILE IN MARKDOWN (fold)
 
+" Se è un file di tipo MD allora fai partir la funzione
+if filetype=markdown
+
 setlocal foldmethod=expr
 setlocal foldexpr=MarkdownFolds()
 setlocal foldtext=MarkdownFoldText()
@@ -401,4 +404,4 @@ function! MarkdownFoldText()
     " return line . "......" . foldSizeStr . foldPercentage . foldLevelStr
 endfunction
 
-
+endif
