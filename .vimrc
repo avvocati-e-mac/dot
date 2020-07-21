@@ -347,13 +347,9 @@ autocmd BufWinEnter * silent loadview
 
 " FUNZIONE PER RIPIEGARE I CAPITOLI NEI FILE IN MARKDOWN (fold)
 
-function! RipiegaMD()
-	setlocal foldmethod=expr
-	setlocal foldexpr=MarkdownFolds()
-	setlocal foldtext=MarkdownFoldText()
-	call MarkdownFold()
-	call MarkdownFoldText()
-endfunction
+setlocal foldmethod=expr
+setlocal foldexpr=MarkdownFolds()
+setlocal foldtext=MarkdownFoldText()
 
 
 function! MarkdownFolds()
