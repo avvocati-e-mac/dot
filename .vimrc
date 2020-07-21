@@ -350,9 +350,9 @@ autocmd BufWinEnter * silent loadview
 
 " Se è un file di tipo MD allora fai partir la funzione
 
-autocmd BufRead *.md setlocal foldmethod=expr
-autocmd BufRead *.md setlocal foldexpr=MarkdownFolds()
-autocmd BufRead *.md setlocal foldtext=MarkdownFoldText()
+setlocal foldmethod=expr
+setlocal foldexpr=MarkdownFolds()
+setlocal foldtext=MarkdownFoldText()
 
 
 function! MarkdownFolds()
@@ -404,4 +404,3 @@ function! MarkdownFoldText()
     " return line . "......" . foldSizeStr . foldPercentage . foldLevelStr
 endfunction
 
-endif
