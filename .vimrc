@@ -104,26 +104,21 @@ let g:airline#extensions#wordcount#formatter#default#fmt = '%s parole'
 
 " Configurazione Netrw (broswer file di Vim)
 
-let g:netrw_banner = 0 " Toglie la barra in alto di spiegazioni
-let g:netrw_liststyle = 3 " Stile dell'alberatura dei file
-let g:netrw_browse_split = 3 " File aperto in un nuovo tab (1 split orrizzontale, 2 split veritcale, 4 nella precedente finestra)
-let g:netrw_winsize = 25 " split di 25
+let g:netrw_banner = 0		  " Toglie la barra in alto di spiegazioni
+let g:netrw_liststyle = 3	  " Stile dell'alberatura dei file
+let g:netrw_browse_split = 3  " File aperto in un nuovo tab (1 split orrizzontale, 2 split veritcale, 4 nella precedente finestra)
+let g:netrw_winsize = 25	  " split di 25
 
 set nocompatible				" vim-specific settings, non-vi-compatible
-set backspace=indent,eol,start 			" Allow backspace in insert mode
-set number					" Line numbers
+set backspace=indent,eol,start	" Allow backspace in insert mode
+set number						" Line numbers
 set relativenumber				" Conteggio numeri relativi rispetto alla linea in cui si è
 set ruler
-
-set hidden					" Allow hidden buffers
-filetype plugin indent on			" Enable file type detection and do language-dependent indenting.
+set showcmd						" Mostra i comandi incompleti in basso nella finestra
+set hidden						" Allow hidden buffers
+filetype plugin indent on	  	" Enable file type detection and do language-dependent indenting.
 set history=1000				" Default = 8
 set autoread					" Ricarica il file modificato in Vim
-
-" Visualizzazione del testo
-set encoding=utf-8				" Permette la visualizzazione di caratteri accentati come è
-set scrolloff=3					" Il numero di righe da tenere sopra e sotto il punto in cui è posizionato il cursore
-set sidescrolloff=5				" Il numero di colonne dello schermo da tenere a destro a sinistra della posizione in cui si trova il cursore
 
 " Gestione dei file di swap (tutti i file di swap di Vim verranno salvati in
 " questa cartella)
@@ -135,10 +130,25 @@ set directory=$HOME/.vim/swp//	" Richiede prima la creazione della cartella: mkd
 set undofile
 set undodir=~/.vim/undodir
 
-nnoremap ; :
+" nnoremap ; : – non mi ricordo perché l'ho inserita, da problemi con il ; mentre scirvo.
 
-set showcmd					" Mostra i comandi incompleti in basso nella finestra
+" --- PERSONALIZZAZIONE ASPETTO VIM ---
+" Visualizzazione del testo
+set encoding=utf-8				" Permette la visualizzazione di caratteri accentati come è
 set showmode 					" Mostra il modo in ci si sta lavorando in Vim in basso a sinistra
+
+" Abilita la visualizzazione della sintassi di file
+syntax enable
+
+" Schema di colori
+colorscheme nord
+
+set wildmode=longest,list,full 		" Attiva auto-completamento
+set wildmenu 				" Mostra le opzioni di completamento della command line
+
+" --- FINE --- PERSONALIZZAZIONE ASPETTO VIM ---
+
+" --- FORMATTAZIONE DEL TESTO APERTO IN VIM ---
 
 set tabstop=4					" Default tabs are too big
 set wrap					" Fa scorrere il testo della finestra in base alle parole (wrap)
@@ -149,6 +159,7 @@ set wrapmargin=0
 set formatoptions-=t				" Don't change wrapping on existing lines
 set formatoptions+=l				" Black magic
 
+" --- FINE --- FORMATTAZIONE DEL TESTO APERTO IN VIM ---
 
 " Splits open at the bottom and right, which is non-retarded, unlike vim defaults. (Luke Smith)
 	set splitbelow splitright
@@ -158,6 +169,8 @@ set formatoptions+=l				" Black magic
 "	autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " Velocizza la navigazione nelle finestre di Vim (Luke Smith):
+" Ctrl più i tasti direzionali di Vim sposta da un pannello all'altro se si sono aperti 1 o più split
+
 	map <C-h> <C-w>h
 	map <C-j> <C-w>j
 	map <C-k> <C-w>k
@@ -225,17 +238,6 @@ set formatoptions+=l				" Black magic
 " ---------------------
 " FINE SCORCIATOIE
 " ---------------------
-
-
-syntax enable
-" set background=dark
-
-" Schema di colori
-colorscheme nord
-
-set wildmode=longest,list,full 		" Attiva auto-completamento
-set wildmenu 				" Mostra le opzioni di completamento della command line
-
 
 " Documentazione in italiano ed inglese (c'è da scaricare però la documentazione tradotta in italiano da http://www.pluto.it/files/ildp/traduzioni/vimhelp-it/index.html)
 :set helplang=it,en
