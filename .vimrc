@@ -12,6 +12,7 @@ filetype plugin on
 if empty(glob('~/.config/nvim/autoload/plug.vim'))
   silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  " Se abilitato i comandi qui sotto vengono autoinstallati i plugin e/o aggiornati all'apertura di Vim
   "autocmd VimEnter * PlugInstall
   "autocmd VimEnter * PlugInstall | source $MYVIMRC
 endif
@@ -40,7 +41,6 @@ call plug#begin('~/.vim/plugged')
 	Plug  'https://github.com/junegunn/goyo.vim'
 
 " Cursormode - cambia il colore del cursore in dipendenza del differente modo in cui si è
-
 	Plug 'https://github.com/vheon/vim-cursormode'
 
 " Vim-pandoc e  Vim-pandoc-syntax (DA TESTARE)
@@ -55,25 +55,27 @@ call plug#begin('~/.vim/plugged')
 
 	Plug 'https://github.com/ajorgensen/vim-markdown-toc'
 
-" Integrazione con GIT 
+" Integrazione con GIT - DA APPROFONDIRE
     Plug 'mhinz/vim-signify'
     Plug 'airblade/vim-gitgutter'
     Plug 'tpope/vim-fugitive'
     Plug 'tpope/vim-rhubarb'
     Plug 'junegunn/gv.vim'
 
-" Look Up Key Bindings
+" Look Up Key Bindings - DA CONFIGURARE ANCORA
+" Basta premere <leader>, per me lo SPAZIO, che si apre il menù con le scorciatoie
     Plug 'liuchengxu/vim-which-key'
 
-" Undo tree
+" Undo tree - DA APPROFONDIRE
     Plug 'mbbill/undotree'
 
-" Fuzzy Search
+" Fuzzy Search- DA APPROFONDIRE
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
 
-" Pandoc Preview plugin
-	Plug 'https://github.com/lingnand/pandoc-preview.vim'
+" Pandoc Preview plugin - ho implementato dei semplici comandi che, allo
+" stato, mi permettono di avere il preview (vedi scorciatoie sotto)
+"	Plug 'https://github.com/lingnand/pandoc-preview.vim'
 
 " Chiusura di Vim-plug
 call plug#end()
@@ -86,6 +88,8 @@ call plug#end()
 
 "  let g:pandoc#syntax#style#emphases = 1 " c'è un problema … riga per configurare la sintassi di  vim-pandoc-syntax
 
+" --- AIRLINE ---
+
 " Statusline in alto invece che in basso
 let g:airline_statusline_ontop=1
 " Abilitazione della visualizzazione dei tab in alto
@@ -97,10 +101,20 @@ let g:airline#extensions#cursormode#enabled = 1
 " Conteggio delle parole come parole e non word
 let g:airline#extensions#wordcount#formatter#default#fmt = '%s parole'
 
-" --- FINE CONFIGURAZIONE PLUGINI ---
+" --- CURSORMODE ---
+" Ho usato i colori scheme di https://www.nordtheme.com per la personalizzazione
+let cursormode_color_map = {
+      \   "n":      "#E5E9F0",
+      \   "i":      "#BF616A",
+      \   "v":      "#B48EAD",
+      \   "V":      "#EBCB8B",
+      \   "\<C-V>": "#D08770",
+      \ }
 
-" Possibilità di usare il moouse con Vim
-	:set mouse=a
+" --- FINE CONFIGURAZIONE PLUGIN ---
+
+" Possibilità di usare il mouse con Vim
+set mouse=a
 
 " Configurazione Netrw (broswer file di Vim)
 
