@@ -96,7 +96,7 @@ let g:airline_statusline_ontop=1
 let g:airline#extensions#tabline#enabled = 1
 " Fonts powrline
 let g:airline_powerline_fonts = 1
-" Attiva l'integrazione di Cursormode
+" Attiva l'integrazione di Cursormode (pare che avendo personalizzato il cursore col comando sottostante non ci sia neccessità di altro, ho quindi commentato la riga sottostante
 let g:airline#extensions#cursormode#enabled = 1
 " Conteggio delle parole come parole e non word
 let g:airline#extensions#wordcount#formatter#default#fmt = '%s parole'
