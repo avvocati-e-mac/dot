@@ -22,6 +22,23 @@ In questo repository ho caricato i miei “dot file” per uso personale … ma
 	1. [Plugin di Oh-my-zsh](#plugin-di-oh-my-zsh)
 	2. [Installazione zsh-autosuggestions e zsh-syntax-highlighting](#installazione-zsh-autosuggestions-e-zsh-syntax-highlighting)
 
+## Installazione FZF
+
+Fuzzy Finder è un sistema di ricerca fuzzy (basta digitare alcune lettere per ricercare un documento od una cartella) per il terminale. Con un’apposita plugin per Vim è poi possibile implementarlo anche in Vim stesso.
+
+Per installare FZF digitate:
+
+```
+brew install fzf
+```
+è inoltre opportuno lanciare il seguente script di configurazione così da avere tutta una serie di funzioni aggiuntive e di scorciatoie a tastiera nel terminale.
+
+```
+$(brew --prefix)/opt/fzf/install
+```
+Ho intenzione di ampliare (man mano che imparo ad utilizzare meglio FZF) questa parte ma trovate un’ottima guida (da cui sto attingendo a man bassa) [qui](https://medium.com/better-programming/boost-your-command-line-productivity-with-fuzzy-finder-985aa162ba5d).
+
+
 ## Installare l'help tradotto in italiano
 
 Andare alla pagina web che trovate [qui](http://www.pluto.it/sites/default/files/ildp/traduzioni/vimhelp-it/index.html).
