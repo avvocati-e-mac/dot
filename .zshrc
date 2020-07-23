@@ -63,3 +63,10 @@ source ~/.alias-rete
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+#  Funzioni per FZF
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Scorciatoia a tastiera per muoversi nelle cartelle con FZF
+# su tastiera italiana (al contrario di quella americana per cui sarebbe  "ç") è ©
+
+bindkey "©" fzf-cd-widget
