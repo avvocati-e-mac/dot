@@ -38,6 +38,12 @@ $(brew --prefix)/opt/fzf/install
 ```
 Ho intenzione di ampliare (man mano che imparo ad utilizzare meglio FZF) questa parte ma trovate un’ottima guida (da cui sto attingendo a man bassa) [qui](https://medium.com/better-programming/boost-your-command-line-productivity-with-fuzzy-finder-985aa162ba5d).
 
+Per disinstallare lo script:
+
+```
+$(brew --prefix)/opt/fzf/uninstall
+```
+
 
 ## Installare l'help tradotto in italiano
 
