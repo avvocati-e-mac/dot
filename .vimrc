@@ -247,6 +247,10 @@ set formatoptions+=l				" Black magic
 " Inserimento documenti per PCT in Virtual block mode / Visuale Blocco
 	vnoremap <leader>w I[doc00]: <esc>
 
+" Test conversione doc .1 in [doc. 1][doc01]
+
+  map <leader>u di(i[<esc>pa][doc01]<esc>
+
 " Salvare il documento ogni volta che si preme Esc quando si esce da Insert Mode
 " inoremap <Esc> <Esc>:w<CR>
 
