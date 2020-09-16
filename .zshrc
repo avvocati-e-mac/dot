@@ -70,3 +70,7 @@ source ~/.alias-rete
 # su tastiera italiana (al contrario di quella americana per cui sarebbe  "ç") è ©
 
 bindkey "©" fzf-cd-widget
+source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
+source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
+source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
+source ~/powerlevel10k/powerlevel10k.zsh-theme
