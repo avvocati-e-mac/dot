@@ -1,26 +1,29 @@
 In questo repository ho caricato i miei “dot file” per uso personale … ma se a qualcuno possono interessare ovviamente sono a disposizione!
 
 
-1. [Installare l'help tradotto in italiano](#installare-lhelp-tradotto-in-italiano)
-2. [Come installare il mio .vimrc](#come-installare-il-mio-vimrc)
+1. [Installazione FZF](#installazione-fzf)
+2. [Installare l'help tradotto in italiano](#installare-lhelp-tradotto-in-italiano)
+3. [Come installare il mio .vimrc](#come-installare-il-mio-vimrc)
 	1. [Istruzioni per me o per chi fa un fork del mio dot repository](#istruzioni-per-me-o-per-chi-fa-un-fork-del-mio-dot-repository)
 	2. [Creare la cartella di swp e undodir per Vim](#creare-la-cartella-di-swp-e-undodir-per-vim)
 	3. [Come installare i plugin](#come-installare-i-plugin)
-3. [Scorciatoie a tastiera personalizzate](#scorciatoie-a-tastiera-personalizzate)
-4. [Personalizzazione per il Markdown](#personalizzazione-per-il-markdown)
-5. [Plugin installati in Vim](#plugin-installati-in-vim)
+4. [Scorciatoie a tastiera personalizzate](#scorciatoie-a-tastiera-personalizzate)
+5. [Personalizzazione per il Markdown](#personalizzazione-per-il-markdown)
+6. [Plugin installati in Vim](#plugin-installati-in-vim)
 	1. [Goyo](#goyo)
 	2. [Vim-airline gestore della statusline](#vim-airline-gestore-della-statusline)
 	3. [Vim-pandoc e  Vim-pandoc-syntax (DA TESTARE)](#vim-pandoc-e--vim-pandoc-syntax-da-testare)
 	4. [Vim-markdown-toc](#vim-markdown-toc)
-6. [Vim-which-key](#vim-which-key)
-7. [Fugitive: plugin per GIT](#fugitive-plugin-per-git)
+7. [Vim-which-key](#vim-which-key)
+8. [Fugitive: plugin per GIT](#fugitive-plugin-per-git)
 	1. [FZF - fuzzy finder (digita il nome di un file e te lo trova …)](#fzf---fuzzy-finder-digita-il-nome-di-un-file-e-te-lo-trova-)
-8. [Tmux.conf](#tmuxconf)
-9. [Colori usati: Terminale (iTerm2), Tmux e Vim](#colori-usati-terminale-iterm2-tmux-e-vim)
-10. [Personalizzazione terminale: Zshrc](#personalizzazione-terminale-zshrc)
+9. [Tmux.conf](#tmuxconf)
+10. [Colori usati: Terminale (iTerm2), Tmux e Vim](#colori-usati-terminale-iterm2-tmux-e-vim)
+11. [Personalizzazione terminale: Zshrc](#personalizzazione-terminale-zshrc)
 	1. [Plugin di Oh-my-zsh](#plugin-di-oh-my-zsh)
 	2. [Installazione zsh-autosuggestions e zsh-syntax-highlighting](#installazione-zsh-autosuggestions-e-zsh-syntax-highlighting)
+	3. [Powerlevel 10k](#powerlevel-10k)
+	4. [NerdFonts](#nerdfonts)
 
 ## Installazione FZF
 
@@ -278,3 +281,34 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/p
 Questa soluzione funziona ma non mi soddisfa molto … tuttavia ho provato ad installare con Hombrew i due plugin ma lo script di Oh my ZSH non rileva i plugin anche se li ho inseriti nella cartella dei plugin con un link simbolico.
 
 **NOTA BENE**: visto che sono dei cloni di repository bisogna ricordarsi ogni tanto di aggiornarli con un `git pull`.
+
+### Powerlevel 10k
+
+Siccome mi piace avere un Terminale “carino” ho anche installato [Powerlevel10k](https://github.com/romkatv/powerlevel10k).
+
+È configurabile utilizzando il comando `p10k`.
+
+Per installarlo ci sono 2 modi:
+
+**1.** Seguire [queste istruzioni](https://github.com/romkatv/powerlevel10k#installation) manuali
+
+```
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
+echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >>! ~/.zshrc
+```
+
+**2.** Se siete su Mac, utilizzare l’installazione attraverso Homebrew che trovate [qui](https://github.com/romkatv/powerlevel10k#homebrew_).
+
+### NerdFonts
+
+Sempre per Vim ho [installato attraverso Homeebrew i NerdFonts](https://github.com/romkatv/powerlevel10k#homebrew). Nella sostanza sono fonts pensati per il Terminale ed aggiuncono dei caratteri speciali che in Airline permetto di creare una barra accattivante.
+
+Di seguito il comando che trovate al link precedente.
+
+```
+brew tap homebrew/cask-fonts
+brew cask install font-hack-nerd-font
+```
+
+Se siete su altre piattaforme rispesto a macOS [qui](https://github.com/ryanoasis/nerd-fonts) trovate la pagina del progetto con anche [la guida all’installazione dei fonts](brew tap homebrew/cask-fonts
+brew cask install font-hack-nerd-font).
