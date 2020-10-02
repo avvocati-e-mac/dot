@@ -5,6 +5,52 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+# include this in .profile or another
+# shell startup file
+printURIComponent() {
+  awk 'BEGIN {while (y++ < 125) z[sprintf("%c", y)] = y
+  while (y = substr(ARGV[1], ++j, 1))
+  q = y ~ /[[:alnum:]_.!~*\47()-]/ ? q y : q sprintf("%%%02X", z[y])
+  printf("%s", q)}' "$1"
+}
+
+# sharesheet should be called with
+# filenames as arguments that will open
+# in system sharesheet. Alternatively you
+# can pipe in text and call it without 
+# arguments
+sharesheet() {
+  printf "\e]6;sharesheet://?pwd="
+  printURIComponent "$PWD"
+  printf "&home="
+  printURIComponent "$HOME"
+  for var in "$@"
+  do
+    printf "&path="
+    printURIComponent "$var"
+  done
+  if [ $# -eq 0 ]
+  then
+    text=$(cat -)
+    printf "&text="
+    printURIComponent "$text"
+  fi
+  printf "\a"
+}
+
+# send the current directory using OSC 7
+# when showing prompt to make filename
+# detection work better
+if [ -z "$INSIDE_EMACS" ]; then
+  update_terminal_cwd() {
+    printf '\e]7;%s' "file://$HOSTNAME"
+    printURIComponent "$PWD"
+    printf "\a"
+  }
+  PROMPT_COMMAND="update_terminal_cwd${PROMPT_COMMAND:+; $PROMPT_COMMAND}"
+fi
+
+
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
