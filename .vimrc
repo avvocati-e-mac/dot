@@ -244,6 +244,10 @@ set formatoptions+=l				" Black magic
 " Rende visibile i caratteri nascosti, come ad esempio gli spazi a fine riga, e i caratteri di tabulazione
 	nmap <leader>l :set list!<CR>
 
+" Mostra i caratteri nascosti (TAB, fine riga e spazio bianco non separabile)
+
+:set listchars=tab:▸\ ,eol:¬,trail:\ ,nbsp:␣
+
 " Inserimento documenti per PCT in Virtual block mode / Visuale Blocco
 	vnoremap <leader>w I[doc00]: <esc>
 
