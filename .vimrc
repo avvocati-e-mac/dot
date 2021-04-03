@@ -252,8 +252,11 @@ set formatoptions+=l				" Black magic
 	vnoremap <leader>w I[doc00]: <esc>
 
 " Test conversione doc .1 in [doc. 1][doc01]
+	
+	map <leader>u :%s/\(doc\).\s\?\(\d\+\)/[\0][\1\2]/g<CR>:%s/\(doc\)\(\d\)\D/\10\2]<CR>
 
-  map <leader>u di(i[<esc>pa][doc01]<esc>
+	
+  " map <leader>u di(i[<esc>pa][doc01]<esc>
 
 " Salvare il documento ogni volta che si preme Esc quando si esce da Insert Mode
 " inoremap <Esc> <Esc>:w<CR>
