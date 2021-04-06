@@ -5,7 +5,12 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-source $HOME/.shellfishrc
+
+
+=======
+# Secure ShellFish config (solo per uso con iPad
+test -e "${HOME}/.shellfishrc" && source "${HOME}/.shellfishrc"
+>>>>>>> 2481efe70313ef14507af2443234e7d8d8ef6499
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -75,3 +80,16 @@ source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
 source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
 source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
 source ~/powerlevel10k/powerlevel10k.zsh-theme
+
+# Configurazione per zsh complitions MA che a me funziona male (fare ulteriori test)
+#if type brew &>/dev/null; then
+#   FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+#
+#   autoload -Uz compinit
+#   compinit
+#fi
+
+## Shell integration con iTerm2
+# richiede installazione dello script https://iterm2.com/documentation-shell-integration.html
+
+source ~/.iterm2_shell_integration.zsh
