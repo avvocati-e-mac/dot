@@ -7,10 +7,8 @@ fi
 
 
 
-=======
 # Secure ShellFish config (solo per uso con iPad
 test -e "${HOME}/.shellfishrc" && source "${HOME}/.shellfishrc"
->>>>>>> 2481efe70313ef14507af2443234e7d8d8ef6499
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
