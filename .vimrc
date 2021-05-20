@@ -353,6 +353,8 @@ inoremap `I Ì
 inoremap `O Ò
 inoremap `U Ù
 inoremap euro €
+inoremap x" “
+inoremap x' ‘
 
 " Settaggi base delle ripiegature (fold)
 
