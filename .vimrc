@@ -102,6 +102,11 @@ let g:airline#extensions#cursormode#enabled = 1
 " Conteggio delle parole come parole e non word
 let g:airline#extensions#wordcount#formatter#default#fmt = '%s parole'
 
+
+
+
+
+
 " --- CURSORMODE ---
 " Ho usato i colori scheme di https://www.nordtheme.com per la personalizzazione
 let cursormode_color_map = {
@@ -113,6 +118,17 @@ let cursormode_color_map = {
       \ }
 
 " --- FINE CONFIGURAZIONE PLUGIN ---
+
+" TEST per far funzionare il stato ALT su iPad da Secure ShellFish 	
+" fix meta-keys which generate <Esc>a .. <Esc>z
+let c='A'
+while c <= 'z'
+  exec "set <M-".toupper(c).">=\e".c
+  exec "imap \e".c." <M-".toupper(c).">"
+  let c = nr2char(1+char2nr(c))
+endw
+" automatically leave insert mode after 'updatetime' milliseconds of inaction
+au CursorHoldI * stopinsert
 
 " Possibilità di usare il mouse con Vim
 set mouse=a
@@ -278,9 +294,9 @@ map <C-Down> ddp
 
 " Navigare con le guide (utile per spostarsi velocemente con dei segnaposti)
 
-inoremap <leader><leader> <Esc>/<Enter>"_c4l
-vnoremap <leader><leader> <Esc>/<++><Enter>"_c4l
-map <leader><leader> <Esc>/<++><Enter>"_c4l
+" inoremap <leader><leader> <Esc>/<Enter>"_c4l
+" vnoremap <leader><leader> <Esc>/<++><Enter>"_c4l
+" map <leader><leader> <Esc>/<++><Enter>"_c4l
 
 " Scorciatoie utili in LaTeX
 
@@ -408,7 +424,7 @@ function! MarkdownFoldText()
     let foldSizeStr = foldWordsStr . foldSize . " l "
     let foldLevelStr = repeat("+--", v:foldlevel)
     let foldPercentage = printf("[%.1f", (foldWords*1.0)/wordCount*100) . "%] "
-    " let expansionString = "."
+Û3;2RÛ61;20;1cnsionString = "."
     let expansionString = repeat(".", w - strwidth(foldSizeStr.line.foldLevelStr.foldPercentage))
     return line . expansionString . foldSizeStr . foldPercentage . foldLevelStr
     " return line . expansionString . foldSizeStr . foldPercentage . foldWordsStr . foldLevelStr
