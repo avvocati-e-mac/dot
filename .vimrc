@@ -63,6 +63,10 @@ call plug#begin('~/.vim/plugged')
     Plug 'tpope/vim-rhubarb'
     Plug 'junegunn/gv.vim'
 
+" Python TEST
+	Plug 'dense-analysis/ale'
+	Plug 'davidhalter/jedi-vim'
+
 " Look Up Key Bindings - DA CONFIGURARE ANCORA
 " Basta premere <leader>, per me lo SPAZIO, che si apre il menù con le scorciatoie
     Plug 'liuchengxu/vim-which-key'
@@ -112,6 +116,10 @@ let cursormode_color_map = {
       \   "\<C-V>": "#D08770",
       \ }
 
+" --- JEDI-VIM ---
+
+let g:jedi#completions_command = "<ALT-p>"
+
 " --- FINE CONFIGURAZIONE PLUGIN ---
 
 " Possibilità di usare il mouse con Vim
@@ -151,6 +159,9 @@ set undodir=~/.vim/undodir
 " Visualizzazione del testo
 set encoding=utf-8				" Permette la visualizzazione di caratteri accentati come è
 set showmode 					" Mostra il modo in ci si sta lavorando in Vim in basso a sinistra
+
+" Utilizza tutto lo spazio a schermo
+set display+=lastline
 
 " Abilita la visualizzazione della sintassi di file
 syntax enable
@@ -253,7 +264,7 @@ set formatoptions+=l				" Black magic
 
 " Test conversione doc .1 in [doc. 1][doc01]
 	
-	map <leader>u :%s/\(doc\).\s\?\(\d\+\)/[\0][\1\2]/g<CR>:%s/\(doc\)\(\d\)\D/\10\2]<CR>
+	map <leader>u :%s/\([Dd]oc.\)\(\s\|\W\)\(\d\+\)/[\1 \3][doc\3]/g<CR>:%s/\[\(doc\)\(\d\)]/\[\10\2]/g<CR>
 
 	
   " map <leader>u di(i[<esc>pa][doc01]<esc>
@@ -338,7 +349,27 @@ inoremap `O Ò
 inoremap `U Ù
 inoremap euro €
 
-" Settaggi base delle ripiegature (fold)
+" Incidazione di dove si trovano i sinonimi
+
+set thesaurus+=~/.vim/thesaurus/thesaurus.txt
+
+" TEST fuzione di sinonimi
+
+function! s:thesaurus()
+     let s:saved_ut = &ut
+     if &ut > 200 | let &ut = 200 | endif
+     augroup ThesaurusAuGroup
+         autocmd CursorHold,CursorHoldI <buffer>
+                     \ let &ut = s:saved_ut |
+                     \ set iskeyword-=32 |
+                     \ autocmd! ThesaurusAuGroup
+     augroup END
+     return ":set iskeyword+=32\<cr>vaWovea\<c-x>\<c-t>"
+endfunction
+ 
+ nnoremap <expr> <leader>t <SID>thesaurus()
+
+"  Settaggi base delle ripiegature (fold)
 
 set foldmethod=syntax
 set foldlevelstart=1
