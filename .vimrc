@@ -42,7 +42,7 @@ call plug#begin('~/.vim/plugged')
 	Plug  'https://github.com/junegunn/goyo.vim'
 
 " Cursormode - cambia il colore del cursore in dipendenza del differente modo in cui si è
-	Plug 'https://github.com/vheon/vim-cursormode'
+" 	Plug 'https://github.com/vheon/vim-cursormode'
 
 " Vim-pandoc e  Vim-pandoc-syntax (DA TESTARE)
 
@@ -96,30 +96,25 @@ call plug#end()
 " --- AIRLINE ---
 
 " Statusline in alto invece che in basso
-let g:airline_statusline_ontop=1
+" let g:airline_statusline_ontop=1
 " Abilitazione della visualizzazione dei tab in alto
 let g:airline#extensions#tabline#enabled = 1
 " Fonts powrline
 let g:airline_powerline_fonts = 1
-" Attiva l'integrazione di Cursormode (pare che avendo personalizzato il cursore col comando sottostante non ci sia neccessità di altro, ho quindi commentato la riga sottostante
-let g:airline#extensions#cursormode#enabled = 1
 " Conteggio delle parole come parole e non word
 let g:airline#extensions#wordcount#formatter#default#fmt = '%s parole'
 
-
-
-
-
-
 " --- CURSORMODE ---
+"attivazione cursorMode
+" let g:airline#extensions#cursormode#enabled = 1
 " Ho usato i colori scheme di https://www.nordtheme.com per la personalizzazione
-let cursormode_color_map = {
-      \   "n":      "#E5E9F0",
-      \   "i":      "#BF616A",
-      \   "v":      "#B48EAD",
-      \   "V":      "#EBCB8B",
-      \   "\<C-V>": "#D08770",
-      \ }
+"let cursormode_color_map = {
+"      \   "n":      "#E5E9F0",
+"      \   "i":      "#BF616A",
+"      \   "v":      "#B48EAD",
+"      \   "V":      "#EBCB8B",
+"      \   "\<C-V>": "#D08770",
+"      \ }
 
 " --- JEDI-VIM ---
 
@@ -127,15 +122,8 @@ let g:jedi#completions_command = "<ALT-p>"
 
 " --- FINE CONFIGURAZIONE PLUGIN ---
 
-" TEST per far funzionare il stato ALT su iPad da Secure ShellFish 	
-" fix meta-keys which generate <Esc>a .. <Esc>z
-let c='A'
-while c <= 'z'
-  exec "set <M-".toupper(c).">=\e".c
-  exec "imap \e".c." <M-".toupper(c).">"
-  let c = nr2char(1+char2nr(c))
-endw
 " automatically leave insert mode after 'updatetime' milliseconds of inaction
+
 au CursorHoldI * stopinsert
 
 " Possibilità di usare il mouse con Vim
@@ -457,7 +445,7 @@ function! MarkdownFoldText()
     let foldSizeStr = foldWordsStr . foldSize . " l "
     let foldLevelStr = repeat("+--", v:foldlevel)
     let foldPercentage = printf("[%.1f", (foldWords*1.0)/wordCount*100) . "%] "
-Û3;2RÛ61;20;1cnsionString = "."
+	" let expansionString = "."
     let expansionString = repeat(".", w - strwidth(foldSizeStr.line.foldLevelStr.foldPercentage))
     return line . expansionString . foldSizeStr . foldPercentage . foldLevelStr
     " return line . expansionString . foldSizeStr . foldPercentage . foldWordsStr . foldLevelStr
