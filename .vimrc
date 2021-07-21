@@ -6,6 +6,9 @@ au BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
 
 " Spazio come Leaderkey
 let mapleader=" "
+" Cursore sempre al centro dello schermo (orrizzontale così come verticale) DA
+set sidescrolloff=999
+set scrolloff=999
 
 filetype plugin on
 
@@ -206,63 +209,50 @@ set formatoptions+=l				" Black magic
 	map <C-k> <C-w>k
 	map <C-l> <C-w>l
 
+" Modifica dello split verticale delle finestre ± 5
+
+	nnoremap  1 :vertical resize -5<cr>
+	nnoremap  2 :vertical resize +5<cr>
 " ----------------------	
 " SCORCIATOIE A TASTIERA
 " ----------------------
 
 " Spell-check attiva / disattiva con <leader>o, 'o' per 'ortografia':
 	map <leader>o :setlocal spell! spelllang=it,en_us<CR>
-
 " Attiva e disattiva la colorazione del markdown
 	map <leader>n :setlocal syntax=markdown<CR>
-
 " Apre l'esplora risorse di Vim Netrw
-
 	map <leader>e :Vexplore<CR>
-
 " Salva documento
   	nmap <leader>w :w<CR>
-
 " Apri .vimrc (idea presa da Luke Smith)
 	map <leader>v :vsp<Space>~/.vimrc<CR>
-
 " Ricarica il .vimrc
 	map <leader>s :source<Space>~/.vimrc<CR>
-
 " Aprire WhicKey - schiacciare una sola volta [spazio](spazio) 
 	nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
-
 " Aprire il file che si sta modificando in Marked 2
 	:nnoremap <leader>m :silent !open -a Marked\ 2.app '%:p'<cr>
-
 " Ridisegna la schermata di Vim (quando l’apertura di app come Marked 2
 " confondono la finestra principale di Vim) 
-
 	:noremap <leader>r :silent redraw!<cr>
-
 " Aprire file md convertito in PDF
 	map <leader>p :!open "%:r".pdf<CR>
-
 " Aprire file md convertito in PDF in Zathura
 "	map <leader>z :silent !zathura "%:r".pdf<CR>
-
 " Aprire file md convertito in PDF in Skim
 "	map <leader>z :silent !open -a skim "%:r".pdf<CR>
-
 " Aprire i file MD con Zathura usando plugin pandoc-preview
 	nnoremap <leader>z :PandocPreview<cr>
 	let g:pandoc_preview_pdf_cmd = "zathura"
-
 " Compila il file MD aperto in PDF con opzione base
-	map <leader>c :w! \| !pandoc "%" --pdf-engine=xelatex -o "%:r".pdf<CR>
-
+	map <leader>cm :w! \| !pandoc "%" --pdf-engine=xelatex -o "%:r".pdf<CR>
+" Compila il file TEX  aperto in PDF con opzione base
+	map <leader>ct :w! \| !lualatex "%"<CR> 
 " Rende visibile i caratteri nascosti, come ad esempio gli spazi a fine riga, e i caratteri di tabulazione
 	nmap <leader>l :set list!<CR>
-
 " Mostra i caratteri nascosti (TAB, fine riga e spazio bianco non separabile)
-
-:set listchars=tab:▸\ ,eol:¬,trail:\ ,nbsp:␣
-
+	set listchars=tab:▸\ ,eol:¬,trail:\ ,nbsp:␣
 " Inserimento documenti per PCT in Virtual block mode / Visuale Blocco
 	vnoremap <leader>w I[doc00]: <esc>
 
@@ -288,52 +278,83 @@ set formatoptions+=l				" Black magic
 map <C-Up> ddkP
 map <C-Down> ddp
 
+" Carica il filetype giusto per LaTeX … si spera
+autocmd BufRead,BufNewFile *.tex set filetype=tex
 
 " AUTOMAZIONI UTILI
 
+" Gestine delle parentesi e delle virgolette
+inoremap <> <><Left>
+inoremap () ()<Left>
+inoremap {} {}<Left>
+inoremap [] []<Left>
+inoremap "" ""<Left>
+inoremap “” “”<Left>
+inoremap '' ''<Left>
+inoremap `` ``<Left>
+
 " Navigare con le guide (utile per spostarsi velocemente con dei segnaposti)
 
-" inoremap <leader><leader> <Esc>/<Enter>"_c4l
-" vnoremap <leader><leader> <Esc>/<++><Enter>"_c4l
-" map <leader><leader> <Esc>/<++><Enter>"_c4l
+ inoremap <leader>; <Esc>/<++><Enter>"_c4l
+ vnoremap <leader>; <Esc>/<++><Enter>"_c4l
+ map <leader>; <Esc>/<++><Enter>"_c4l
 
-" Scorciatoie utili in LaTeX
-
+" SCORCIATOIE LATEX
+" INSERT MODE
 	" Enfatizzato
 	autocmd FileType tex inoremap xem \emph{}<++><Esc>T{i
 	" Grassetto
 	autocmd FileType tex inoremap xbf \textbf{}<++><Esc>T{i
 	" Corsivo
 	autocmd FileType tex inoremap xit \textit{}<++><Esc>T{i
+	" Item
+	autocmd FileType tex inoremap xte \item<space>
 	" Citazione
-	autocmd FileType tex inoremap xct \textcite{}<++><Esc>T{i
-	autocmd FileType tex inoremap xcp \parencite{}<++><Esc>T{i
+	autocmd FileType tex inoremap xcq \quote{}<++><Esc>T{i
 	" Smallcap
 	autocmd FileType tex inoremap xsc \textsc{}<Space><++><Esc>T{i
-	autocmd Filetype markdown,rmd inoremap xl --------<Enter>
+	" Link / ref
+	autocmd FileType tex inoremap xrf \href{}<Space><++><Esc>T{i
+	" Link a file
+	autocmd FileType tex inoremap xfr \href{run:}{<++>}<Space><++><Esc>T:i
+	" Nuovo Comando
+	autocmd FileType tex inoremap xnc \newcommand{\}{<++>}<Esc>T\i
+" VISUAL MODE
+	" Grassetto
+	autocmd Filetype tex vnoremap <leader>b c\textbf{<Esc>pi}<Esc>
+	" Corsivo
+	autocmd Filetype tex vnoremap <leader>i c\textit{<Esc>pi}<Esc>
+	" Link
+	autocmd Filetype tex vnoremap <leader>'l c\href{}{<Esc>pa}h%hi
+	" Link dalla clipboard di macOS
+	autocmd Filetype tex vnoremap <leader>'p c\href{<Esc>"+pa}{<Esc>pi}<Esc>
 
-" Dialetto LaTeX
+" NORMAL MODE
+	" Testo centrato
+	autocmd Filetype markdown,rmd,md nmap <leader>tc o\begin{center}<enter><tab><enter>\end{center}<enter><++><esc>kki
+	autocmd Filetype tex nmap <leader>tc o\begin{center}<enter><tab><enter>\end{center}<enter><++><esc>kki
+	" Testo a destra
+	autocmd Filetype markdown,rmd,md nmap <leader>tr o\begin{flushright}<enter><tab><enter>\end{flushright}<enter><++><esc>kki
+	autocmd Filetype tex nmap <leader>tr o\begin{flushright}<enter><tab><enter>\end{flushright}<enter><++><esc>kki
+	" Elenco puntato
+	autocmd Filetype tex nmap <leader>ti o\begin{itemize}<enter><tab><enter>\end{itemize}<enter><++><esc>kki
+	" Elenco numerato
+	autocmd Filetype tex nmap <leader>te o\begin{enumerate}<enter><tab><enter>\end{enumerate}<enter><++><esc>kki
 
-" Testo centrato
-autocmd Filetype markdown,rmd map <leader>k 0O\\begin{center}<esc>jjO\\end{center}
+" SCORCIATOIE MARKDOWN
 
-" Testo centrato in insert mode
-autocmd Filetype markdown,rmd inoremap xtc \begin{center}<Enter><Enter>\end{center}<esc>kA
-
-" Grassetto parola selezionata mentre si scrive / insert mode
-inoremap xbb <Esc>bi**<Esc>ea**
-
-" Grassetto in modalità visuale
-vnoremap <leader>b c**<Esc>pi**<Esc>
-
-" Corsivo in modalità visuale
-vnoremap <leader>i c_<Esc>pi_<Esc>
-
-" Link in modalità visuale
-vnoremap <leader>l c[<Esc>pi](<++>)
-
-" Link dalla clipboard di macOS in modalità visuale
-vnoremap <leader>p c[<Esc>pi](<Esc>"+pa)<Esc>
+	" Testo centrato in insert mode
+	autocmd Filetype markdown,rmd,md  inoremap xtc \begin{center}<Enter><Enter>\end{center}<enter><++><esc>kkA
+	" Grassetto parola selezionata mentre si scrive / insert mode
+	autocmd Filetype markdown,rmd,md inoremap xbb <Esc>bi**<Esc>ea**
+	" Grassetto in modalità visuale
+	autocmd Filetype markdown,rmd,md vnoremap <leader>b c**<Esc>pi**<Esc>
+	" Corsivo in modalità visuale
+	autocmd Filetype markdown,rmd,md vnoremap <leader>i c_<Esc>pi_<Esc>
+	" Link in modalità visuale
+	autocmd Filetype markdown,rmd,md vnoremap <leader>l c[<Esc>pi](<++>)
+	" Link dalla clipboard di macOS in modalità visuale
+	autocmd Filetype markdown,rmd,md vnoremap <leader>p c[<Esc>pi](<Esc>"+pa)<Esc>
 
 " Generale: converte accento e lettara in lettera accentata ed euro in €
 
@@ -355,9 +376,12 @@ inoremap euro €
 inoremap x" “
 inoremap x' ‘
 
-" Incidazione di dove si trovano i sinonimi
+" SCRIPT per aprire un file sotto il cursore con il comando open di a-Shell
+" funziona anche per gli URL
+	noremap gO :!open <cfile><CR>
 
-set thesaurus+=~/.vim/thesaurus/thesaurus.txt
+" Incidazione di dove si trovano i sinonimi
+	set thesaurus+=~/.vim/thesaurus/thesaurus.txt
 
 " TEST fuzione di sinonimi
 
