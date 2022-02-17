@@ -81,6 +81,14 @@ call plug#begin('~/.vim/plugged')
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
 
+" ALE per linting
+
+	Plug 'dense-analysis/ale'
+
+" Folding per YAML
+
+	Plug 'pedrohdz/vim-yaml-folds'
+
 " Pandoc Preview plugin - ho implementato dei semplici comandi che, allo
 " stato, mi permettono di avere il preview (vedi scorciatoie sotto)
 "	Plug 'https://github.com/lingnand/pandoc-preview.vim'
@@ -122,6 +130,15 @@ let g:airline#extensions#wordcount#formatter#default#fmt = '%s parole'
 " --- JEDI-VIM ---
 
 let g:jedi#completions_command = "<ALT-p>"
+
+" --- ALE ---
+
+" Configurazione
+
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+let g:ale_sign_error = '✘'
+let g:ale_sign_warning = '⚠'
+let g:ale_lint_on_text_changed = 'never'
 
 " --- FINE CONFIGURAZIONE PLUGIN ---
 
@@ -249,6 +266,8 @@ set formatoptions+=l				" Black magic
 	map <leader>cm :w! \| !pandoc "%" --pdf-engine=xelatex -o "%:r".pdf<CR>
 " Compila il file TEX  aperto in PDF con opzione base
 	map <leader>ct :w! \| !lualatex "%"<CR> 
+" Compila il file MD aperto in PDF con opzione lettera
+	map <leader>cl :w! \| !pandoc "%" --pdf-engine=xelatex  --template=template.tex -o "%:r".pdf<CR>
 " Rende visibile i caratteri nascosti, come ad esempio gli spazi a fine riga, e i caratteri di tabulazione
 	nmap <leader>l :set list!<CR>
 " Mostra i caratteri nascosti (TAB, fine riga e spazio bianco non separabile)
@@ -280,6 +299,10 @@ map <C-Down> ddp
 
 " Carica il filetype giusto per LaTeX … si spera
 autocmd BufRead,BufNewFile *.tex set filetype=tex
+
+" Indentazione corretta per i YAML
+
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
 " AUTOMAZIONI UTILI
 
