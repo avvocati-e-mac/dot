@@ -263,7 +263,8 @@ set formatoptions+=l				" Black magic
 	nnoremap <leader>z :PandocPreview<cr>
 	let g:pandoc_preview_pdf_cmd = "zathura"
 " Compila il file MD aperto in PDF con opzione base
-	map <leader>cm :w! \| !pandoc "%" --pdf-engine=xelatex -o "%:r".pdf<CR>
+	map <leader>cm :w! \| !pandoc "%" --pdf-engine=xelatex -o $(date +"\%Y-\%m-\%d")\ "%:r".pdf<CR>
+	"map <leader>cm :w! \| !pandoc "%" --pdf-engine=xelatex -o "%:r".pdf<CR>
 " Compila il file TEX  aperto in PDF con opzione base
 	map <leader>ct :w! \| !lualatex "%"<CR> 
 " Compila il file MD aperto in PDF con opzione lettera
