@@ -1,12 +1,12 @@
 "  Test per vedere se risconosce correttamente i file .md
-set conceallevel=0	" Annulla la funzione che nasconde il markup del markdown mando non lo si
+set conceallevel=0	" Annulla la funzione che nasconde il markup del markdown quando non lo si
 					" sta editando
 filetype on
 au BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
 
 " Spazio come Leaderkey
 let mapleader=" "
-" Cursore sempre al centro dello schermo (orrizzontale così come verticale) DA
+" Cursore sempre al centro dello schermo (orizzontale così come verticale) DA
 set sidescrolloff=999
 set scrolloff=999
 
@@ -153,7 +153,7 @@ set mouse=a
 
 let g:netrw_banner = 0		  " Toglie la barra in alto di spiegazioni
 let g:netrw_liststyle = 3	  " Stile dell'alberatura dei file
-let g:netrw_browse_split = 3  " File aperto in un nuovo tab (1 split orrizzontale, 2 split veritcale, 4 nella precedente finestra)
+let g:netrw_browse_split = 3  " File aperto in un nuovo tab (1 split orizzontale, 2 split verticale, 4 nella precedente finestra)
 let g:netrw_winsize = 25	  " split di 25
 
 set nocompatible				" vim-specific settings, non-vi-compatible
@@ -337,7 +337,7 @@ inoremap `` ``<Left>
 	autocmd FileType tex inoremap xcq \quote{}<++><Esc>T{i
 	" Smallcap
 	autocmd FileType tex inoremap xsc \textsc{}<Space><++><Esc>T{i
-	" Link / ref
+	" Link o riferimento
 	autocmd FileType tex inoremap xrf \href{}<Space><++><Esc>T{i
 	" Link a file
 	autocmd FileType tex inoremap xfr \href{run:}{<++>}<Space><++><Esc>T:i
